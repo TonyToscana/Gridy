@@ -28,11 +28,6 @@ public class Character : MonoBehaviour
 
     void CheckInput()
     {
-        Vector3 move = Vector3.zero;
-
-        move.x = Input.GetAxis("Horizontal");
-        move.y = Input.GetAxis("Vertical");
-
         if (Input.anyKey)
         {
             foreach (KeyCode item in System.Enum.GetValues(typeof(KeyCode)))
