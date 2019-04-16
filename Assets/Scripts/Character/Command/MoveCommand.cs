@@ -37,12 +37,16 @@ public class MoveCommand : ICommand
         if (character.LastDirectionKey == KeyCode.LeftArrow || character.LastDirectionKey == KeyCode.RightArrow ||
             character.LastDirectionKey == KeyCode.A || character.LastDirectionKey == KeyCode.D )
         {
+            Points.GetInstance().Add(1);
+
             move.x = Input.GetAxis("Horizontal");
         }
 
         if (character.LastDirectionKey == KeyCode.UpArrow || character.LastDirectionKey == KeyCode.DownArrow ||
             character.LastDirectionKey == KeyCode.W || character.LastDirectionKey == KeyCode.S)
         {
+            Points.GetInstance().Sub(1);
+
             move.y = Input.GetAxis("Vertical");
         }
 

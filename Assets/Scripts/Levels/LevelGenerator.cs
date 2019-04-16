@@ -3,12 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public static class ColorTypeConverter
+{
+    public static string ToRGBHex(Color c)
+    {
+        return string.Format("#{0:X2}{1:X2}{2:X2}", ToByte(c.r), ToByte(c.g), ToByte(c.b));
+    }
+
+    private static byte ToByte(float f)
+    {
+        f = Mathf.Clamp01(f);
+        return (byte)(f * 255);
+    }
+}
+
 public class LevelGenerator : MonoBehaviour
 {
 
-    public Texture2D map;
-    public ColorToPrefab[] prefab;
-    public string nextLevelScene;
+    public Map[] maps;
+    //public ColorToPrefab[] prefab;
+
+    private int overlay = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -18,32 +33,42 @@ public class LevelGenerator : MonoBehaviour
 
     private void RenderLevel()
     {
-        for (int x = 0; x < map.width; x++)
+        foreach (var map in maps)
         {
-            for (int y = 0; y < map.height; y++)
+            for (int x = 0; x < map.map.width; x++)
             {
-                GenerateTile(x, y);
+                for (int y = 0; y < map.map.height; y++)
+                {
+                    GenerateTile(map, x, y);
+                }
             }
+
+            overlay--;
         }
     }
 
-    private void GenerateTile(int x, int y)
+    private void GenerateTile(Map map, int x, int y)
     {
-        Color pixel = map.GetPixel(x, y);
+        Color pixel = map.map.GetPixel(x, y);
 
         if (pixel.a == 0)
         {
             return;
         }
 
-        foreach (ColorToPrefab elem in this.prefab)
+        foreach (ColorToPrefab elem in map.prefab)
         {
             if (elem.color.Equals(pixel))
             {
-                Vector3 position = new Vector3(x, y, 0);
+                Vector3 position = new Vector3(x, y, overlay);
 
                 Instantiate(elem.prefab, position, Quaternion.identity, transform);
-            } 
+            }
+            else
+            {
+                Debug.Log("NO -- " + ColorTypeConverter.ToRGBHex(elem.color) + " != " + ColorTypeConverter.ToRGBHex(pixel));
+            }
+
         }
     }
 }
