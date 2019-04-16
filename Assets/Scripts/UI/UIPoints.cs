@@ -20,6 +20,9 @@ public class UIPoints : MonoBehaviour
     private void FixedUpdate()
     {
         Text text = GetComponent<Text>();
+
+        if (text == null) return;
+
         text.text = "Puntos: -" + Points.Number;
     }
 }

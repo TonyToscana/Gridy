@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4831872150217245272}
   - component: {fileID: 4831872150217245223}
   - component: {fileID: 4831872150217245220}
+  - component: {fileID: 2411977243638308452}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -95,6 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  LastDirectionKey: 0
+  PrevDirectionKey: 0
 --- !u!61 &4831872150217245223
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142,3 +145,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2411977243638308452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4831872150217245275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a01050303adcea40a18f50379affa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialHealth: 3
+  MaxHealth: 3
+  MinHealth: 0
