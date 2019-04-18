@@ -18,6 +18,7 @@ public class Character : MonoBehaviour
         this.commandInvoker = new CommandInvoker();
 
         this.commandInvoker.SetAlias(this.MovementKeysList, "Move");
+        this.commandInvoker.SetAlias("Space", "Shield");
     }
 
     // Update is called once per frame
@@ -36,6 +37,8 @@ public class Character : MonoBehaviour
         {
             foreach (KeyCode item in System.Enum.GetValues(typeof(KeyCode)))
             {
+                string commandString = "";
+
                 if (Input.GetKey(item))
                 {
                     if (this.MovementKeysList.Contains(item.ToString()))
@@ -47,7 +50,7 @@ public class Character : MonoBehaviour
 
                 if (Input.GetKey(item))
                 {
-                    ICommand cmd = this.commandInvoker.GetCommand(LastDirectionKey.ToString());
+                    ICommand cmd = this.commandInvoker.GetCommand(item.ToString());
                     cmd?.Execute();
                     break;
                 }
