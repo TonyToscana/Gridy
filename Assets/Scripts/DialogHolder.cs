@@ -1,33 +1,66 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class DialogHolder : MonoBehaviour
 {
+    private Animator anim;
+    [SerializeField] public ParticleSystem particles;
 
     void Start()
     {
+        this.particles.Stop();
+        this.anim = GetComponent<Animator>();
+    }
+    
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        ShowDialog(other.gameObject);
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Player"))
+        FindObjectOfType<DialogManager>().Destroy();
+    }
+
+    public void ShowDialog(GameObject gameObject)
+    {
+        if (gameObject.tag.Equals("Player"))
         {
             DialogManager manager = FindObjectOfType<DialogManager>();
 
             manager.AddMessage("Hello. I see you are new in the craft.")
                    .AddMessage("This is a dangerous world. I will give you a shild to protext your self for 5 seconds.")
                    .AddMessage("Press ENTER to get the shild.", "Shield")
+                   .OnReaded(MessageReaded)
                    .ShowBox();
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    private object MessageReaded(int MessagesLeft)
     {
+        if (MessagesLeft <= 0)
+        {
+            StartCoroutine(RunAnimationForSeconds(1f));
+        }
+
+        return null;
     }
 
-    // Update is called once per frame
+    private IEnumerator RunAnimationForSeconds(float sec)
+    {
+        this.particles.Play();
+        this.anim.SetBool("wand", true);
+
+        yield return new WaitForSeconds(sec);
+
+        this.particles.Stop();
+        this.anim.SetBool("wand", false);
+    }
+    
     void Update()
     {
         

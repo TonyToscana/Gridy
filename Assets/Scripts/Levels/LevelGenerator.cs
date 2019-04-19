@@ -71,7 +71,7 @@ public class LevelGenerator : MonoBehaviour
             }
             else
             {
-                Debug.Log("NO - " + ColorTypeConverter.ToRGBHex(elem.color) + " - " + ColorTypeConverter.ToRGBHex(pixel));
+                //Debug.Log("NO - " + ColorTypeConverter.ToRGBHex(elem.color) + " - " + ColorTypeConverter.ToRGBHex(pixel));
             }
         }
     }

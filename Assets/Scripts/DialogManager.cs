@@ -19,6 +19,14 @@ public class DialogManager : MonoBehaviour
     private Queue<MessageCommandPair> QueueText;
     private MessageCommandPair CurrentMessage;
     private CommandInvoker commandInvoker;
+    private Func<int, object> MethodReaded;
+
+    public DialogManager OnReaded(Func<int, object> Method)
+    {
+        this.MethodReaded = Method;
+
+        return this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +51,8 @@ public class DialogManager : MonoBehaviour
                 ICommand cmd = this.commandInvoker.GetCommand(this.CurrentMessage.Command);
                 cmd?.Execute();
             }
+
+            this.MethodReaded(this.QueueText.Count);
 
             if (this.CanClose)
             {
@@ -98,6 +108,15 @@ public class DialogManager : MonoBehaviour
         }
         
         StartCoroutine(TypeText(this.CurrentMessage));
+    }
+
+    public void Destroy()
+    {
+        this.QueueText.Clear();
+        this.DialogBox.SetActive(false);
+        this.CloseNextText.gameObject.SetActive(false);
+        this.DialogActive = false;
+        this.CanClose = true;
     }
 
     private IEnumerator TypeText(MessageCommandPair msg)
