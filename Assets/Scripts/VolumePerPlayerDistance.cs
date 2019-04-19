@@ -23,7 +23,5 @@ public class VolumePerPlayerDistance : MonoBehaviour
         float vol = 0.3f;
 
         this.audio.volume = 1 - (dist / 5);
-
-        Debug.Log(dist);
     }
 }

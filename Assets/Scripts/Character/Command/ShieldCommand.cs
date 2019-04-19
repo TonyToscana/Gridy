@@ -6,7 +6,6 @@ public class ShieldCommand : MonoBehaviour, ICommand
 {
     public void Execute()
     {
-        Debug.Log("ADS");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         if (player == null) return;

@@ -15,7 +15,7 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.commandInvoker = new CommandInvoker();
+        this.commandInvoker = CommandInvoker.GetInstance();
 
         this.commandInvoker.SetAlias(this.MovementKeysList, "Move");
         this.commandInvoker.SetAlias("Space", "Shield");

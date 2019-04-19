@@ -69,6 +69,10 @@ public class LevelGenerator : MonoBehaviour
 
                 Instantiate(elem.prefab, position, Quaternion.identity, transform);
             }
+            else
+            {
+                Debug.Log("NO - " + ColorTypeConverter.ToRGBHex(elem.color) + " - " + ColorTypeConverter.ToRGBHex(pixel));
+            }
         }
     }
 }
