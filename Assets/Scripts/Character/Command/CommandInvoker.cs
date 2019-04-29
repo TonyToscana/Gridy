@@ -9,6 +9,18 @@ public class CommandInvoker
     private readonly IDictionary<string, string> Alias;
     public string ClassSufix { get; set; } = "Command";
 
+    private static CommandInvoker instance = null;
+
+    public static CommandInvoker GetInstance()
+    {
+        if (instance == null)
+        {
+            instance = new CommandInvoker();
+        }
+
+        return instance;
+    }
+
     public CommandInvoker()
     {
         this.Commands = new Dictionary<string, ICommand>();
