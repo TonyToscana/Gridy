@@ -27,6 +27,8 @@ public class AlienEnemyAI : MonoBehaviour
     public float nextWaypointDistance = 3;
 
     private int currentWaypoint = 0;
+
+    private bool searchingForPlayer = false;
     #endregion
 
     private void Start()
@@ -36,7 +38,12 @@ public class AlienEnemyAI : MonoBehaviour
 
         if(target == null)
         {
-            Debug.Log("No Player Found? PANIC!");
+            if (!searchingForPlayer)
+            {
+                searchingForPlayer = true;
+                StartCoroutine(SearchForPlayer());
+            }
+            //Debug.Log("No Player Found? PANIC!");
             return;
         }
 
@@ -55,10 +62,32 @@ public class AlienEnemyAI : MonoBehaviour
         }
     }
 
+    IEnumerator SearchForPlayer()
+    {
+        GameObject sResult = GameObject.FindGameObjectWithTag("Player");
+        if(sResult == null)
+        {
+            yield return new WaitForSeconds(0.5f);
+            StartCoroutine(SearchForPlayer());
+        } else
+        {
+            target = sResult.transform;
+            searchingForPlayer = false;
+            StartCoroutine(UpdatePath());
+            yield break;
+        }
+    }
+
     IEnumerator UpdatePath()
     {
         if (target == null)
         {
+            if (!searchingForPlayer)
+            {
+                searchingForPlayer = true;
+                StartCoroutine(SearchForPlayer());
+            }
+            //Debug.Log("No Player Found? PANIC!");
             yield break;
         }
 
@@ -72,12 +101,18 @@ public class AlienEnemyAI : MonoBehaviour
     {
         if (target == null)
         {
+            if (!searchingForPlayer)
+            {
+                searchingForPlayer = true;
+                StartCoroutine(SearchForPlayer());
+            }
+            //Debug.Log("No Player Found? PANIC!");
             return;
         }
 
         //TODO: always look at player
 
-        if(path == null)
+        if (path == null)
         {
             return;
         }
