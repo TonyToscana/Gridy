@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3751519201294460719}
   - component: {fileID: 8918794988839990704}
   - component: {fileID: 7702644161912932258}
+  - component: {fileID: 8937534111655824935}
+  - component: {fileID: 6707378221515354621}
   m_Layer: 0
   m_Name: AlienEnemyPrefab
   m_TagString: Untagged
@@ -145,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ddf1f4da644ca4daea344ab8b3d494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  senseDistance: 6
   target: {fileID: 0}
   updateRate: 2
   speed: 600
@@ -165,3 +168,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     health: 100
+--- !u!58 &8937534111655824935
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437900331149956866}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5666666
+--- !u!70 &6707378221515354621
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437900331149956866}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.000000021382476, y: -0.17936923}
+  m_Size: {x: 1.5333343, y: 0.5531178}
+  m_Direction: 1

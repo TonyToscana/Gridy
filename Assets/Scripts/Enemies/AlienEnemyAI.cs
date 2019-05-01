@@ -9,6 +9,8 @@ using Pathfinding;
 public class AlienEnemyAI : MonoBehaviour
 {
     #region properties
+    public float senseDistance = 1f;
+
     public Transform target;
 
     public float updateRate = 2f;
@@ -55,7 +57,7 @@ public class AlienEnemyAI : MonoBehaviour
 
     private void OnPathComplete(Path p)
     {
-        Debug.Log("We got a Path. Did it have an error?" + p.error);
+        //Debug.Log("We got a Path. Did it have an error?" + p.error);
         if (!p.error)
         {
             path = p;
@@ -73,9 +75,11 @@ public class AlienEnemyAI : MonoBehaviour
         } else
         {
             target = sResult.transform;
+
             searchingForPlayer = false;
             StartCoroutine(UpdatePath());
             yield break;
+            
         }
     }
 
@@ -86,6 +90,29 @@ public class AlienEnemyAI : MonoBehaviour
             if (!searchingForPlayer)
             {
                 searchingForPlayer = true;
+                StartCoroutine(SearchForPlayer());
+            }
+            //Debug.Log("No Player Found? PANIC!");
+            yield break;
+        }
+
+        //doesn't work
+        //Debug.DrawRay(this.transform.position, target.position - this.transform.position);
+        bool raycast = Physics2D.Raycast(this.transform.position, target.position - this.transform.position, Vector3.Distance(target.position, this.transform.position), 8).collider != null;
+        Debug.LogError("The raycast is " + raycast);
+        //works
+        bool distance = Vector3.Distance(target.position, this.transform.position) > senseDistance;
+
+        if(distance || raycast)
+        {
+            seeker.CancelCurrentPathRequest();
+            //yield return new WaitForSeconds(1 / updateRate);
+            //StartCoroutine(UpdatePath());
+            if (!searchingForPlayer)
+            {
+                target = null;
+                searchingForPlayer = true;
+                yield return new WaitForSeconds(0.5f);
                 StartCoroutine(SearchForPlayer());
             }
             //Debug.Log("No Player Found? PANIC!");
@@ -122,7 +149,7 @@ public class AlienEnemyAI : MonoBehaviour
         {
             if (pathIsEnded) return;
 
-            Debug.Log("End of path reached!");
+            //Debug.Log("End of path reached!");
             pathIsEnded = true;
             return;
         }
