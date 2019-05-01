@@ -37,10 +37,8 @@ public class AlienEnemyAI : MonoBehaviour
 
     private void Start()
     {
-        //target = GameObject.FindGameObjectWithTag("Player").transform;
-        //AstarPath start = GetComponent<AstarPath>();
-        //if (start == null) Debug.LogError("astar is null");
-        //start?.Scan();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -101,21 +99,13 @@ public class AlienEnemyAI : MonoBehaviour
             yield break;
         }
 
-        //doesn't work
-        Debug.DrawRay(this.transform.position, target.position - this.transform.position);
         bool raycast = Physics2D.Raycast(this.transform.position, target.position - this.transform.position, Vector3.Distance(target.position, this.transform.position), 1 << layerMask).collider != null;
-        Debug.LogError("The raycast is " + raycast);
-        //works
         bool distance = Vector3.Distance(target.position, this.transform.position) > senseDistance;
 
         if(distance || raycast)
         {
-            if(raycast)
-                Debug.LogError("Raycast hit something, yay");
-
             seeker.CancelCurrentPathRequest();
-            //yield return new WaitForSeconds(1 / updateRate);
-            //StartCoroutine(UpdatePath());
+      
             if (!searchingForPlayer)
             {
                 target = null;
@@ -123,7 +113,6 @@ public class AlienEnemyAI : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
                 StartCoroutine(SearchForPlayer());
             }
-            //Debug.Log("No Player Found? PANIC!");
             yield break;
         }
 

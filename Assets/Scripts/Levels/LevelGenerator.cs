@@ -29,9 +29,6 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         RenderLevel();
-        AstarPath start = GetComponent<AstarPath>();
-        if (start == null) Debug.LogError("astar is null");
-        start?.Scan();
     }
 
     private void RenderLevel()
