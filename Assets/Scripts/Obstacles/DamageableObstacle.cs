@@ -30,8 +30,8 @@ public class DamageableObstacle : MonoBehaviour
 
         spRndrer = collision.gameObject.GetComponent<SpriteRenderer>();
 
-        StartCoroutine(Flash(0.05f));
-        StartCoroutine(Knockback(0f, collision.gameObject.GetComponent<Rigidbody2D>(), collision.gameObject.transform.position));
+        //StartCoroutine(Flash(0.05f));
+        //StartCoroutine(Knockback(0f, collision.gameObject.GetComponent<Rigidbody2D>(), collision.gameObject.transform.position));
     }
 
     void Start()
