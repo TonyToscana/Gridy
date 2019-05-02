@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8424676402640302462}
   - component: {fileID: 8424676402640302463}
   - component: {fileID: 8424676402640302461}
-  - component: {fileID: 8424676402640302460}
   - component: {fileID: 8424676402640302451}
+  - component: {fileID: 8620626617438816810}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -145,32 +145,6 @@ MonoBehaviour:
   leftPushRange: -0.1
   righPushRange: 0.1
   velocity: 60
---- !u!61 &8424676402640302460
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8424676402640302458}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.004635334, y: -0.75985146}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.07, y: 2.2}
-    newSize: {x: 1.07, y: 2.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8938551, y: 0.5505657}
-  m_EdgeRadius: 0
 --- !u!114 &8424676402640302451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +158,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageDone: 1
+--- !u!70 &8620626617438816810
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8424676402640302458}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000017576502, y: -0.7442375}
+  m_Size: {x: 1.0899571, y: 0.6358419}
+  m_Direction: 1
