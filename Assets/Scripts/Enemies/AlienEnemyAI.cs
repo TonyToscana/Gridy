@@ -158,6 +158,8 @@ public class AlienEnemyAI : MonoBehaviour
         dir *= speed * Time.fixedDeltaTime;
 
         //Move the AI
+        //playerTag[0].transform.localPosition += move * character.speed * Time.deltaTime;
+        //this.transform.localPosition += dir * speed * Time.fixedDeltaTime;
         rb.AddForce(dir, fMode);
         float dist = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
         if (dist < nextWaypointDistance)

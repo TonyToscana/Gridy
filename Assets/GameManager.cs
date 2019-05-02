@@ -23,12 +23,13 @@ public class GameManager : MonoBehaviour, HealthListener
         //this.gameOverDialog.SetActive(true);
 
         //StartCoroutine(ShowCanvas(canvas));
+        Debug.Log("Inside OnDeath function!");
         if(!playerIsDead)
         {
             playerIsDead = true;
             PlayerPrefs.SetString("cameFromScene", SceneManager.GetActiveScene().name);
             //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
-            SceneManager.LoadSceneAsync("GameOver");
+            SceneManager.LoadScene("GameOver");
         }
         
     }
