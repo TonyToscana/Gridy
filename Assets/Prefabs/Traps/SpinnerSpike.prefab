@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4059472735507074061}
   - component: {fileID: 4059472735507074060}
   - component: {fileID: 4059472735507074059}
+  - component: {fileID: 8433426116468781357}
   m_Layer: 0
   m_Name: SpinnerSpike
   m_TagString: Untagged
@@ -116,7 +117,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4059472735507074048}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -135,3 +136,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.54, y: 1.54}
   m_EdgeRadius: 0
+--- !u!58 &8433426116468781357
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059472735507074048}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.81
