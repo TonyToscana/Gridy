@@ -12,7 +12,7 @@ public class DamageableObstacle : MonoBehaviour
     {
         Health playerHealth = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Health>();
 
-        if (playerHealth == null) return;
+        if (col.gameObject.tag != "Player") return;
 
         playerHealth.Damage(DamageDone);
     }
@@ -21,7 +21,7 @@ public class DamageableObstacle : MonoBehaviour
     {
         Health playerHealth = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Health>();
 
-        if (playerHealth == null) return;
+        if (collision.gameObject.tag != "Player") return;
 
         playerHealth.Damage(DamageDone);
 

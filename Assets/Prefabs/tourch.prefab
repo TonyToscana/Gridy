@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2531945073361892156}
   - component: {fileID: 5941617844190287715}
   - component: {fileID: 4104622745936239366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tourch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3078703198356806247}
   - component: {fileID: 3078703198356806248}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 3078703198441929607}
   - component: {fileID: 3078703198441929609}
   - component: {fileID: 3078703198441929608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
