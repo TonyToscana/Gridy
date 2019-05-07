@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour, HealthListener
     private Health Health;
 
     public GameObject gameOverDialog;
+    private bool HealthListenerSet = false;
 
 
     public void OnDamage(int CurrentHealth, Health health)
@@ -62,8 +63,9 @@ public class GameManager : MonoBehaviour, HealthListener
                 this.Health = this.CharacterObject.GetComponent<Health>();
             }
         }
-        else
+        else if (!HealthListenerSet)
         {
+            HealthListenerSet = true;
             Health.SetListener(this);
         }
     }
