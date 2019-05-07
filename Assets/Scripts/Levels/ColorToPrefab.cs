@@ -5,7 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class ColorToPrefab
 {
-    public Color color;
-    public GameObject prefab;
-    public bool autoRotate = false;
+    [SerializeField] public Color color;
+    [SerializeField] public GameObject prefab;
+    [SerializeField] public bool autoRotate = false;
+    [SerializeField] public float LayerZIndex = 0;
+    [SerializeField] public bool UseLayerZIndex = false;
 }

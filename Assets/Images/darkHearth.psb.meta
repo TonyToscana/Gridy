@@ -1,0 +1,335 @@
+fileFormatVersion: 2
+guid: 056e8d82f7450fc40b9cb3f4e5734449
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Layer 16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1036
+      y: 4
+      width: 94
+      height: 100
+    spriteID: 79c404dc41d007943aa59a7740a0e0f6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 875, y: -716}
+  - name: Layer 15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1024
+      height: 905
+    spriteID: 8d430a1e7b0a59c479516f76cdc4c125
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 6
+  importHiddenLayers: 0
+  importedTextureWidth: 2048
+  importedTextureHeight: 2048
+  documentSize: {x: 1024, y: 905}
+  textureActualWidth: 2048
+  textureActualHeight: 2048
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Layer 16
+    spriteName: Layer 16
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 79c404dc41d007943aa59a7740a0e0f6
+    layerID: 35
+    mosaicPosition: {x: 1036, y: 4}
+  - name: Layer 15
+    spriteName: Layer 15
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8d430a1e7b0a59c479516f76cdc4c125
+    layerID: 34
+    mosaicPosition: {x: 4, y: 4}
+  characterData:
+    bones:
+    - name: bone_1
+      position: {x: 284.30222, y: 624.9185, z: 0}
+      rotation: {x: 0, y: 0, z: 0.22975282, w: 0.973249}
+      length: 73.57627
+      parentId: -1
+    - name: bone_2
+      position: {x: 73.57632, y: 0.0000058476, z: 0}
+      rotation: {x: 0, y: 0, z: -0.13767044, w: 0.9904781}
+      length: 77.69866
+      parentId: 0
+    - name: bone_3
+      position: {x: 77.698654, y: 0.000050570856, z: 0}
+      rotation: {x: 0, y: 0, z: -0.11781107, w: 0.99303603}
+      length: 54.027233
+      parentId: 1
+    - name: bone_4
+      position: {x: 54.027252, y: -0.000023912608, z: 0}
+      rotation: {x: 0, y: 0, z: -0.097960845, w: 0.99519026}
+      length: 37.987095
+      parentId: 2
+    - name: bone_5
+      position: {x: 321.15503, y: 402.48544, z: 0}
+      rotation: {x: 0, y: 0, z: 0.17593099, w: 0.98440254}
+      length: 91.196556
+      parentId: -1
+    - name: bone_6
+      position: {x: 91.19658, y: 0.00002095331, z: 0}
+      rotation: {x: 0, y: 0, z: 0.30103192, w: 0.9536141}
+      length: 104.0526
+      parentId: 4
+    - name: bone_7
+      position: {x: 104.05263, y: -0.0000001917033, z: 0}
+      rotation: {x: 0, y: 0, z: 0.08275596, w: 0.99656993}
+      length: 74.18587
+      parentId: 5
+    - name: bone_8
+      position: {x: 694.94794, y: 245.86093, z: 0}
+      rotation: {x: 0, y: 0, z: 0.64424103, w: 0.76482254}
+      length: 77.46434
+      parentId: -1
+    - name: bone_9
+      position: {x: 77.464355, y: -0.000030418858, z: 0}
+      rotation: {x: 0, y: 0, z: 0.2920509, w: 0.9564028}
+      length: 70.69454
+      parentId: 7
+    - name: bone_10
+      position: {x: 70.69453, y: 0.000034501707, z: 0}
+      rotation: {x: 0, y: 0, z: 0.005975215, w: 0.9999822}
+      length: 118.951584
+      parentId: 8
+    - name: bone_11
+      position: {x: 118.951614, y: -0.000058113867, z: 0}
+      rotation: {x: 0, y: 0, z: 0.13761671, w: 0.9904856}
+      length: 98.931915
+      parentId: 9
+    - name: bone_12
+      position: {x: 952.9177, y: 715.73444, z: 0}
+      rotation: {x: 0, y: 0, z: 0.99716496, w: 0.07524686}
+      length: 149.0998
+      parentId: -1
+    - name: bone_13
+      position: {x: 149.09982, y: 0.000026985472, z: 0}
+      rotation: {x: 0, y: 0, z: 0.06416511, w: 0.9979393}
+      length: 118.48469
+      parentId: 11
+    - name: bone_14
+      position: {x: 118.484695, y: -0.000037675887, z: 0}
+      rotation: {x: 0, y: 0, z: 0.34305608, w: 0.93931496}
+      length: 60.84353
+      parentId: 12
+    - name: bone_15
+      position: {x: 255.34642, y: 828.92523, z: 0}
+      rotation: {x: 0, y: 0, z: -0.09459843, w: 0.9955155}
+      length: 195.66307
+      parentId: -1
+    - name: bone_16
+      position: {x: 195.66309, y: -0.000037754464, z: 0}
+      rotation: {x: 0, y: 0, z: -0.2889258, w: 0.9573515}
+      length: 95.86396
+      parentId: 14
+    - name: bone_17
+      position: {x: 700.21265, y: 847.3516, z: 0}
+      rotation: {x: 0, y: 0, z: -0.98930234, w: 0.14587988}
+      length: 186.95677
+      parentId: -1
+    - name: bone_18
+      position: {x: 186.95676, y: 0.000108618144, z: 0}
+      rotation: {x: 0, y: 0, z: 0.5963902, w: 0.80269474}
+      length: 71.073296
+      parentId: 16
+    - name: bone_19
+      position: {x: 526.4779, y: 74.75854, z: 0}
+      rotation: {x: 0, y: 0, z: 0.61242247, w: 0.79053074}
+      length: 84.276146
+      parentId: -1
+    - name: bone_20
+      position: {x: 84.276146, y: -0.0000036209026, z: 0}
+      rotation: {x: 0, y: 0, z: 0.1486435, w: 0.9888909}
+      length: 143.6136
+      parentId: 18
+    - name: bone_21
+      position: {x: 410.65472, y: 210.32428, z: 0}
+      rotation: {x: 0, y: 0, z: 0.5531469, w: 0.8330838}
+      length: 108.534325
+      parentId: -1
+    parts:
+    - spritePosition:
+        x: 233
+        y: 562
+        width: 298
+        height: 140
+      spriteId: 9f37fdfad72a1b946a65f3d5632c64ab
+      bones: 00000000010000000200000003000000
+    - spritePosition:
+        x: 315
+        y: 352
+        width: 202
+        height: 250
+      spriteId: 7ab878f1b04af0d4095b7ba171a734db
+      bones: 040000000500000006000000
+    - spritePosition:
+        x: 9
+        y: 13
+        width: 1005
+        height: 879
+      spriteId: d1d1ce14262e995449690654b0a7e4a7
+      bones: 1200000007000000080000000b00000009000000100000000c0000000e0000000f0000000000000004000000140000000a00000006000000050000001300000002000000010000000d000000
+    dimension: {x: 0, y: 0}
+  boneGOs:
+  - go: {fileID: 4373878042572784091, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 0
+  - go: {fileID: 2614928248294365856, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 1
+  - go: {fileID: 51297757174974170, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 2
+  - go: {fileID: -4005028626115471426, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 3
+  - go: {fileID: 8025950351729157925, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 4
+  - go: {fileID: -7204442317646962022, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 5
+  - go: {fileID: 4590756585289567131, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 6
+  - go: {fileID: -3274872912586063869, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 7
+  - go: {fileID: -808509477000157916, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 8
+  - go: {fileID: -6044468650658779650, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 9
+  - go: {fileID: -8461918440826789080, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 10
+  - go: {fileID: -1040203436991235867, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 11
+  - go: {fileID: 5615065961289438836, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 12
+  - go: {fileID: 8930187315268473479, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 13
+  - go: {fileID: -5011773523537679017, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 14
+  - go: {fileID: -2475512603344914391, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 15
+  - go: {fileID: -3471228934441202062, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 16
+  - go: {fileID: -5638034413859726444, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 17
+  - go: {fileID: -1545031221718467926, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 18
+  - go: {fileID: -8274373936850189992, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 19
+  - go: {fileID: -1851639032019633335, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+    index: 20
+  generateGOHierarchy: 0

@@ -62,13 +62,17 @@ public class LevelGenerator : MonoBehaviour
             {
                 Vector3 position = new Vector3(x, y, overlay);
 
+                if (elem.UseLayerZIndex)
+                {
+                    position = new Vector3(x, y, elem.LayerZIndex);
+                }
+
                 Instantiate(elem.prefab, position, Quaternion.identity, transform);
             }
             else
             {
-                Debug.Log("NO -- " + ColorTypeConverter.ToRGBHex(elem.color) + " != " + ColorTypeConverter.ToRGBHex(pixel));
+                //Debug.Log("NO - " + ColorTypeConverter.ToRGBHex(elem.color) + " - " + ColorTypeConverter.ToRGBHex(pixel));
             }
-
         }
     }
 }
