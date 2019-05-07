@@ -2,16 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour, HealthListener
 {
     private GameManager manager;
     private GameObject CharacterObject;
     private Health Health;
-
+    
     public GameObject gameOverDialog;
     private bool HealthListenerSet = false;
-
+    
+    private bool playerIsDead = false;
 
     public void OnDamage(int CurrentHealth, Health health)
     {
@@ -19,12 +21,20 @@ public class GameManager : MonoBehaviour, HealthListener
 
     public void OnDeath(int CurrentHealth, Health health)
     {
-        Canvas canvas = this.gameOverDialog.GetComponent<Canvas>();
-        canvas.enabled = true;
-        this.gameOverDialog.SetActive(true);
+        //Canvas canvas = this.gameOverDialog.GetComponent<Canvas>();
+        //canvas.enabled = true;
+        //this.gameOverDialog.SetActive(true);
 
-        StartCoroutine(ShowCanvas(canvas));
-
+        //StartCoroutine(ShowCanvas(canvas));
+        Debug.Log("Inside OnDeath function!");
+        if(!playerIsDead)
+        {
+            playerIsDead = true;
+            PlayerPrefs.SetString("cameFromScene", SceneManager.GetActiveScene().name);
+            //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("GameOver");
+        }
+        
     }
 
     private IEnumerator ShowCanvas(Canvas canvas)
