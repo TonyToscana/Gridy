@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour, HealthListener
     private GameManager manager;
     private GameObject CharacterObject;
     private Health Health;
+    private int consumables;
+    private bool gameEnded = false;
 
     private bool playerIsDead = false;
 
@@ -23,13 +25,13 @@ public class GameManager : MonoBehaviour, HealthListener
         //this.gameOverDialog.SetActive(true);
 
         //StartCoroutine(ShowCanvas(canvas));
-        Debug.Log("Inside OnDeath function!");
+        
         if(!playerIsDead)
         {
             playerIsDead = true;
             PlayerPrefs.SetString("cameFromScene", SceneManager.GetActiveScene().name);
             //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadSceneAsync("GameOver");
         }
         
     }
@@ -55,6 +57,8 @@ public class GameManager : MonoBehaviour, HealthListener
     // Start is called before the first frame update
     void Start()
     {
+        this.gameEnded = false;
+        this.consumables = FindObjectsOfType<Consumable>().Length;
         this.manager = FindObjectOfType<GameManager>();
     }
 
@@ -74,5 +78,17 @@ public class GameManager : MonoBehaviour, HealthListener
         {
             Health.SetListener(this);
         }
+
+        if(consumables == 0 && !gameEnded)
+        {
+            //SceneManager.LoadSceneAsync("LevelWon");
+            this.gameEnded = true;
+            Debug.Log("YOU FUCKING WONERED");
+        }
+    }
+
+    public void removeConsumable()
+    {
+        this.consumables--;
     }
 }

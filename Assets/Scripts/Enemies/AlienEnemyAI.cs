@@ -11,6 +11,7 @@ public class AlienEnemyAI : MonoBehaviour
     #region properties
     public int layerMask = 8;
 
+    public float stopDistance = 1f;
     public float senseDistance = 1f;
 
     public Transform target;
@@ -22,7 +23,7 @@ public class AlienEnemyAI : MonoBehaviour
 
     public Path path;
 
-    public float speed = 300f;
+    public float speed = 10f;
     public ForceMode2D fMode;
 
     [HideInInspector]
@@ -102,7 +103,9 @@ public class AlienEnemyAI : MonoBehaviour
         bool raycast = Physics2D.Raycast(this.transform.position, target.position - this.transform.position, Vector3.Distance(target.position, this.transform.position), 1 << layerMask).collider != null;
         bool distance = Vector3.Distance(target.position, this.transform.position) > senseDistance;
 
-        if(distance || raycast)
+        distance = distance || Vector3.Distance(target.position, this.transform.position) <= stopDistance;
+
+        if (distance || raycast)
         {
             seeker.CancelCurrentPathRequest();
       
@@ -160,7 +163,8 @@ public class AlienEnemyAI : MonoBehaviour
         //Move the AI
         //playerTag[0].transform.localPosition += move * character.speed * Time.deltaTime;
         //this.transform.localPosition += dir * speed * Time.fixedDeltaTime;
-        rb.AddForce(dir, fMode);
+        //rb.AddForce(dir, fMode);
+        transform.position += dir;
         float dist = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
         if (dist < nextWaypointDistance)
         {

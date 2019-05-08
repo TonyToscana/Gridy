@@ -99,8 +99,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2
-  m_AngularDrag: 0
+  m_LinearDrag: 1000
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -148,10 +148,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layerMask: 8
-  senseDistance: 6
+  stopDistance: 1.5
+  senseDistance: 10
   target: {fileID: 0}
   updateRate: 2
-  speed: 400
+  speed: 4
   fMode: 0
   pathIsEnded: 0
   nextWaypointDistance: 1
@@ -167,8 +168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac685374114843141af4d81fd7922e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   stats:
     health: 100
+  damage: 1
 --- !u!58 &8937534111655824935
 CircleCollider2D:
   m_ObjectHideFlags: 0

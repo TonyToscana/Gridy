@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour
 { 
     public void RestartGame()
     {
+        Points.GetInstance().Set(0);
         SceneManager.LoadScene(PlayerPrefs.GetString("cameFromScene"));
         //SceneManager.LoadScene(scene)
     }
