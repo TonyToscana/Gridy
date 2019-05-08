@@ -9,16 +9,12 @@ public class GameManager : MonoBehaviour, HealthListener
     private GameManager manager;
     private GameObject CharacterObject;
     private Health Health;
-<<<<<<< HEAD
     private int consumables;
     private bool gameEnded = false;
-
-=======
     
-    public GameObject gameOverDialog;
+    //public GameObject gameOverDialog;
     private bool HealthListenerSet = false;
     
->>>>>>> 331eaf021aa765432d6921454fd0b3d14450db1c
     private bool playerIsDead = false;
 
     public void OnDamage(int CurrentHealth, Health health)
