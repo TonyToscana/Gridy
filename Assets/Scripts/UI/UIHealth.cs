@@ -35,10 +35,10 @@ public class UIHealth : MonoBehaviour, HealthListener
             {
                 for (int i = 0; i < this.Health.CurrentHealth; i++)
                 {
-                    Vector2 pos = new Vector2(this.transform.position.x + (25f * i), this.transform.position.y);
+                    Vector2 pos = new Vector2(this.transform.position.x + (64f * i), this.transform.position.y);
                     GameObject obj = Instantiate(HeartPrefab, pos, Quaternion.identity);
 
-                    obj.transform.localScale = new Vector3(0.2f, 0.2f , 0f);
+                    obj.transform.localScale = new Vector3(1f, 1f , 0f);
                     obj.transform.parent = this.gameObject.transform;
 
                     HeartInstances.Enqueue(obj);

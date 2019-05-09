@@ -23,6 +23,6 @@ public class UIPoints : MonoBehaviour
 
         if (text == null) return;
 
-        text.text = "Puntos: " + Points.Number;
+        text.text = "Calorías    " + Points.Number;
     }
 }
