@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour, HealthListener
     private Health Health;
     private int consumables;
     private bool gameEnded = false;
-    
+
+    private float startTime;
+
     //public GameObject gameOverDialog;
     private bool HealthListenerSet = false;
     
@@ -32,6 +34,8 @@ public class GameManager : MonoBehaviour, HealthListener
         if(!playerIsDead)
         {
             playerIsDead = true;
+            PlayerPrefs.SetFloat("elapsedTimeInLevel", Time.time - startTime);
+            PlayerPrefs.SetInt("lastScore", Points.GetInstance().Number);
             PlayerPrefs.SetString("cameFromScene", SceneManager.GetActiveScene().name);
             //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
             SceneManager.LoadSceneAsync("GameOver");
@@ -60,6 +64,7 @@ public class GameManager : MonoBehaviour, HealthListener
     // Start is called before the first frame update
     void Start()
     {
+        this.startTime = Time.time;
         this.gameEnded = false;
         this.consumables = FindObjectsOfType<Consumable>().Length;
         this.manager = FindObjectOfType<GameManager>();

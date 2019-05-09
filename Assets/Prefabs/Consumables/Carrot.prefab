@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1047a973315c945851124ce87603ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  calories: 25
+  calories: 10
