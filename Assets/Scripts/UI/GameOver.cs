@@ -12,8 +12,8 @@ public class GameOver : MonoBehaviour
 
     private void Start()
     {
-        float timeInSeconds = PlayerPrefs.GetFloat("elapsedTimeInLevel");
-        this.timeText.text = "Tiempo \n" + formatTime(timeInSeconds);
+        string time = PlayerPrefs.GetString("elapsedTimeInLevel");
+        this.timeText.text = "Tiempo \n" + time;
         this.scoreText.text = "Calorías \n" + PlayerPrefs.GetInt("lastScore").ToString();
     }
 
@@ -28,24 +28,5 @@ public class GameOver : MonoBehaviour
     {
         Debug.Log(SceneManager.GetActiveScene().name);
         Application.Quit();
-    }
-
-    private string formatTime(float timeInSeconds)
-    {
-        int seconds = (int) (timeInSeconds % 60f);
-        int minutes = (int) (timeInSeconds / 60f);
-        int hours = minutes % 60;
-        minutes /= 60;
-
-        return formatNumber(hours) + ":" + formatNumber(minutes) + ":" + formatNumber(seconds);
-    }
-
-    private string formatNumber(float number)
-    {
-        if (number < 10f)
-        {
-            return "0" + number;
-        }
-        else return number.ToString();
     }
 }
