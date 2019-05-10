@@ -9,13 +9,16 @@ public class Consumable : MonoBehaviour
     private bool pickUpAllowed = false;
 
     private bool taken = false;
-
+    public AudioClip CoinPicked;
+   
+  
     private void Update()
     {
         if (pickUpAllowed && Input.GetKeyDown("space"))
         {
             taken = true;
             Points.GetInstance().Add(calories);
+            AudioSource.PlayClipAtPoint(CoinPicked, transform.position);
             FindObjectOfType<GameManager>().removeConsumable();
             Destroy(this.gameObject);
         }
