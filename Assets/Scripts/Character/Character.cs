@@ -45,8 +45,11 @@ public class Character : MonoBehaviour
                     {
                         this.PrevDirectionKey = this.LastDirectionKey;
                         this.LastDirectionKey = item;
+                        GetComponent<AudioSource>().UnPause();
                     }
+                    
                 }
+               
 
                 if (Input.GetKey(item))
                 {
@@ -55,6 +58,10 @@ public class Character : MonoBehaviour
                     break;
                 }
             }
+        }
+        else
+        {
+            GetComponent<AudioSource>().Pause();
         }
     }
 }
