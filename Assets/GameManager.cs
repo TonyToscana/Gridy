@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour, HealthListener
 {
+    public PauseMenu pauseMenu;
+
+
     private GameManager manager;
     private GameObject CharacterObject;
     private Health Health;
@@ -89,5 +92,15 @@ public class GameManager : MonoBehaviour, HealthListener
     public void removeConsumable()
     {
         this.consumables--;
+    }
+
+    public void OpenOptionsMenu()
+    {
+        //code to open options menu
+    }
+
+    public void GotoMainMenu()
+    {
+        //code to go to main menu
     }
 }
