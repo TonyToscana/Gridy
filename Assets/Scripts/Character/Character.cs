@@ -18,7 +18,7 @@ public class Character : MonoBehaviour
         this.commandInvoker = CommandInvoker.GetInstance();
 
         this.commandInvoker.SetAlias(this.MovementKeysList, "Move");
-        this.commandInvoker.SetAlias("Space", "Shield");
+        this.commandInvoker.SetAlias("Q", "Shield");
     }
 
     // Update is called once per frame
