@@ -907,6 +907,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6788427994528901981, guid: ac5e8d67074572a48be943a4c4a0bae5,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195928765121003734, guid: ac5e8d67074572a48be943a4c4a0bae5,
+        type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac5e8d67074572a48be943a4c4a0bae5, type: 3}
 --- !u!114 &5150056283678784494 stripped

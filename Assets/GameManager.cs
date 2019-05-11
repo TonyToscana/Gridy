@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour, HealthListener
             yield return new WaitForSeconds(0.009f);
         }
 
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     public void OnHeal(int CurrentHealth, Health health)
