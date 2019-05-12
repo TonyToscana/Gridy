@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ShieldCommand : MonoBehaviour, ICommand
 {
-    private bool used;
+    private static bool used;
 
 
     private void Start()
@@ -44,9 +44,8 @@ public class ShieldCommand : MonoBehaviour, ICommand
         }
     }
 
-  
-
-
-   
-
+    internal static void setShieldNotUsed()
+    {
+        used = false;
+    }
 }

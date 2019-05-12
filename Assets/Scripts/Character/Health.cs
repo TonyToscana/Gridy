@@ -26,20 +26,26 @@ public class Health : MonoBehaviour
 
     public void Damage(int damage)
     {
-        this.CurrentHealth -= damage;
 
-        if (Handlers == null) return;
 
-        foreach(var item in this.Handlers)
+
+        if (GameObject.FindObjectsOfType<Power>().Length == 0)
         {
-            item.OnDamage(this.CurrentHealth, this);
-        }
+            this.CurrentHealth -= damage;
 
-        if (this.CurrentHealth <= this.MinHealth)
-        {
+            if (Handlers == null) return;
+
             foreach (var item in this.Handlers)
             {
-                item.OnDeath(this.CurrentHealth, this);
+                item.OnDamage(this.CurrentHealth, this);
+            }
+
+            if (this.CurrentHealth <= this.MinHealth)
+            {
+                foreach (var item in this.Handlers)
+                {
+                    item.OnDeath(this.CurrentHealth, this);
+                }
             }
         }
     }
