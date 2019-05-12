@@ -5,6 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [SerializeField] public float speed = 4.4f;
+    public Animator animator;
     [HideInInspector] public KeyCode LastDirectionKey = KeyCode.None;
     [HideInInspector] public KeyCode PrevDirectionKey = KeyCode.None;
     [HideInInspector] public IList<string> MovementKeysList = new List<string> { "UpArrow", "DownArrow", "LeftArrow", "RightArrow", "A", "S", "D", "W" };
