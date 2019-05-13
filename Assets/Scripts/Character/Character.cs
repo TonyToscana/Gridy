@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Character : MonoBehaviour
 {
+    
     [SerializeField] public float speed = 4.4f;
     public Animator animator;
     [HideInInspector] public KeyCode LastDirectionKey = KeyCode.None;
