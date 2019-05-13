@@ -830,7 +830,7 @@ PrefabInstance:
     - target: {fileID: 500399180495127735, guid: ac5e8d67074572a48be943a4c4a0bae5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 500399180495127735, guid: ac5e8d67074572a48be943a4c4a0bae5,
         type: 3}
@@ -911,6 +911,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788427994528901981, guid: ac5e8d67074572a48be943a4c4a0bae5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6195928765121003734, guid: ac5e8d67074572a48be943a4c4a0bae5,
         type: 3}
@@ -1260,7 +1265,7 @@ RectTransform:
   - {fileID: 8399752010211022149}
   - {fileID: 1226499723}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

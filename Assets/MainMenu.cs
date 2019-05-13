@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    
+    public GameObject optionsMenu;
     public void OnStartClicked()
     {
         StartGame();
@@ -38,6 +38,7 @@ public class MainMenu : MonoBehaviour
 
     void OpenOptions()
     {
+        optionsMenu.SetActive(true);
         //Code to open the options menu
     }
 

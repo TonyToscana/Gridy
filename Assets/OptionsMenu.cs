@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class OptionsMenu : MonoBehaviour
 {
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = gameObject.AddComponent<GameManager>();
+
+        if (gameManager)
+        {
+            Debug.Log("GM encontrado");
+        } else
+        {
+            Debug.Log("GM no encontrado");
+        }
     }
 
     // Update is called once per frame
@@ -31,6 +40,11 @@ public class OptionsMenu : MonoBehaviour
             UnmuteSound();
         }
 
+    }
+
+    public void OnButtonClicked()
+    {
+        gameObject.SetActive(false);
     }
 
     private void MuteSound()
