@@ -189,7 +189,7 @@ MonoBehaviour:
   - map: {fileID: 2800000, guid: 99d39e165a9195343acc3117e24a44b9, type: 3}
     prefab:
     - color: {r: 1, g: 0, b: 0, a: 1}
-      prefab: {fileID: 4453407401351750429, guid: a7b054b55c18e324bb17df5abbad845c,
+      prefab: {fileID: 8989017569230718822, guid: f51235798ba120d49885587946efa511,
         type: 3}
       autoRotate: 0
       LayerZIndex: 0
