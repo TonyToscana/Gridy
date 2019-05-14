@@ -51,17 +51,20 @@ public class OptionsMenu : MonoBehaviour
     {
         //TODO mute sound
         Debug.Log("Sound muted");
+        PlayerPrefs.SetFloat("Mute", 0f);
     }
 
     private void UnmuteSound()
     {
         //TODO unmute sound
         Debug.Log("Sound unmuted");
+        PlayerPrefs.SetFloat("Mute", 1f);
     }
 
     private void ChangeVolume(float volume)
     {
         //TODO change sound volume level
         Debug.Log("Volume level changed to: " + volume);
+        PlayerPrefs.SetFloat("MasterVolume", volume);
     }
 }
