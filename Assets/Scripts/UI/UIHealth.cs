@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIHealth : MonoBehaviour, HealthListener
 {
@@ -35,19 +36,25 @@ public class UIHealth : MonoBehaviour, HealthListener
             {
                 for (int i = 0; i < this.Health.CurrentHealth; i++)
                 {
-                    Vector2 pos = new Vector2(this.transform.position.x + (64f * i), this.transform.position.y);
+                    Vector2 pos = new Vector2(this.transform.position.x + (42f * i), this.transform.position.y);
+                    //GameObject obj = Instantiate(HeartPrefab, pos, Quaternion.identity);
                     GameObject obj = Instantiate(HeartPrefab, pos, Quaternion.identity);
 
-                    obj.transform.localScale = new Vector3(1f, 1f , 0f);
+                    obj.transform.localScale = new Vector3(1f, 1f, 0f);
                     obj.transform.parent = this.gameObject.transform;
-
+                    //obj.AddComponent<AspectRatioFitter>().aspectMode = AspectRatioFitter.AspectMode.FitInParent;
                     HeartInstances.Enqueue(obj);
+                    obj.transform.localScale = new Vector3(1f, 1f, 0f);
                 }
 
                 Health.SetListener(this);
 
                 InitialHealthRender = true;
             }
+        }
+        else
+        {
+
         }
     }
 
@@ -57,7 +64,7 @@ public class UIHealth : MonoBehaviour, HealthListener
 
     public void OnHeal(int CurrentHealth, Health health)
     {
-        
+
     }
 
     public void OnDamage(int CurrentHealth, Health health)
@@ -65,6 +72,7 @@ public class UIHealth : MonoBehaviour, HealthListener
         if (HeartInstances.Count > 0)
         {
             Destroy(HeartInstances.Dequeue());
+            //HeartInstances.Dequeue().GetComponent<Image>().enabled = false;
         }
     }
 }

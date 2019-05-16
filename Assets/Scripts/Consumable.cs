@@ -10,15 +10,22 @@ public class Consumable : MonoBehaviour
 
     private bool taken = false;
     public AudioClip CoinPicked;
+
+    private AudioManager audioManager;
    
-  
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
     private void Update()
     {
         if (pickUpAllowed && Input.GetKeyDown("space"))
         {
             taken = true;
             Points.GetInstance().Add(calories);
-            AudioSource.PlayClipAtPoint(CoinPicked, transform.position);
+            //AudioSource.PlayClipAtPoint(CoinPicked, transform.position);
+            FindObjectOfType<AudioManager>().Play("CoinPicked");
             FindObjectOfType<GameManager>().removeConsumable();
             Destroy(this.gameObject);
         }

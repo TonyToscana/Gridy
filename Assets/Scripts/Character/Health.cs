@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] public int InitialHealth = 3;
-    [SerializeField] public int MaxHealth = 3;
-    [SerializeField] public int MinHealth = 0;
+    public int currentLives = 3;
+    private int maxLives = 3;
+    private int minLives = 0;
+    public int currentHealth = 100;
+    private int maxHealth = 100;
+    private int minHealth = 0;
+    private int MinHealth = 0;
+
 
     private IList<HealthListener> Handlers;
 
@@ -24,11 +29,14 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void Start()
+    {
+        this.CurrentHealth = 3;
+        this.Handlers = new List<HealthListener>();
+    }
+
     public void Damage(int damage)
     {
-
-
-
         if (GameObject.FindObjectsOfType<Power>().Length == 0)
         {
             this.CurrentHealth -= damage;
@@ -67,9 +75,9 @@ public class Health : MonoBehaviour
         this.Handlers.Add(listener);
     }
 
-    public void Start()
+    public void RemoveListener(HealthListener listener)
     {
-        this.CurrentHealth = InitialHealth;
-        this.Handlers = new List<HealthListener>();
+        this.Handlers.Remove(listener);
     }
+
 }
