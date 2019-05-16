@@ -2555,20 +2555,22 @@ ScriptedImporter:
       bones: 02000000000000000100000004000000050000000600000003000000
     dimension: {x: 0, y: 0}
   boneGOs:
-  - go: {fileID: 8353358144445769939, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
+  - go: {fileID: 183734657218194783, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
     index: 0
-  - go: {fileID: -5812770511304571792, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
+  - go: {fileID: -2211705845564358991, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
     index: 1
-  - go: {fileID: -7228789229956022483, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
+  - go: {fileID: 2427273388754698166, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
     index: 2
-  - go: {fileID: -2063580671377472864, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
+  - go: {fileID: 4566479572956466963, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
     index: 3
-  - go: {fileID: -2342767665461483361, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
+  - go: {fileID: 1561776218042344173, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
     index: 4
-  - go: {fileID: 6785337939420900923, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
+  - go: {fileID: 4835905215905823026, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
     index: 5
-  - go: {fileID: 2793262554307186717, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
+  - go: {fileID: 3347967549706813771, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
     index: 6
-  - go: {fileID: -3556893322354487572, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
+  - go: {fileID: -3334930041182783358, guid: 5ab1ea3f1b2e2d34093f38ccbac96e52, type: 3}
     index: 7
   generateGOHierarchy: 0
+  textureAssetName: apple
+  prefabAssetName: apple_GO

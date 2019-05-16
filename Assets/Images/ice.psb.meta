@@ -136,3 +136,5 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
   boneGOs: []
   generateGOHierarchy: 0
+  textureAssetName: ice
+  prefabAssetName: ice_GO

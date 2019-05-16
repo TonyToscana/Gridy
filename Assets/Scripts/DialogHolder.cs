@@ -9,6 +9,8 @@ public class DialogHolder : MonoBehaviour
     private Animator anim;
     [SerializeField] public ParticleSystem particles;
 
+    private bool inside = false;
+
     void Start()
     {
         this.particles.Stop();
@@ -18,11 +20,17 @@ public class DialogHolder : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        ShowDialog(other.gameObject);
+        Debug.Log("ENTER");
+        if (inside == false)
+        {
+            inside = true;
+            ShowDialog(other.gameObject);
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
+        inside = false;
         FindObjectOfType<DialogManager>().Destroy();
     }
 
@@ -52,6 +60,7 @@ public class DialogHolder : MonoBehaviour
 
     private IEnumerator RunAnimationForSeconds(float sec)
     {
+        Debug.Log("ASD DA");
         this.particles.Play();
         this.anim.SetBool("wand", true);
 
