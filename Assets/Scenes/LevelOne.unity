@@ -150,14 +150,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maps:
-  - map: {fileID: 2800000, guid: b670095bcb2b08a4390ee1d6ec9e575c, type: 3}
+  - map: {fileID: 2800000, guid: 6b01ec4544a3f0548988601a5db87e64, type: 3}
     prefab:
     - color: {r: 1, g: 0.74509805, b: 0, a: 1}
       prefab: {fileID: 8202105430663097371, guid: 22e97e2b21d35774db378c32232b3b53,
         type: 3}
       autoRotate: 0
-      LayerZIndex: 0
-      UseLayerZIndex: 0
+      LayerZIndex: -7
+      UseLayerZIndex: 1
   - map: {fileID: 2800000, guid: d863f9f1c6c690b4b8005ff280e93b9a, type: 3}
     prefab:
     - color: {r: 0.19215687, g: 0, b: 0, a: 1}
