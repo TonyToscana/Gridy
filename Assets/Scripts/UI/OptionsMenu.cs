@@ -1,13 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
+    public AudioMixer audioMixer;
     private GameManager gameManager;
+
+    private float savedVolume;
+
+    public static OptionsMenu instance;
+
+    private Slider slider;
+    private static float sliderValue = 0f;
+
+    private Toggle toggle;
+    private static bool toggleValue = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        slider = GetComponentInChildren<Slider>();
+        toggle = GetComponentInChildren<Toggle>();
+        slider.value = sliderValue;
+        toggle.isOn = toggleValue;
+        
         gameManager = gameObject.AddComponent<GameManager>();
 
         if (gameManager)
@@ -17,12 +36,6 @@ public class OptionsMenu : MonoBehaviour
         {
             Debug.Log("GM no encontrado");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OnSliderChanged(float newValue)
@@ -49,22 +62,29 @@ public class OptionsMenu : MonoBehaviour
 
     private void MuteSound()
     {
-        //TODO mute sound
         Debug.Log("Sound muted");
-        PlayerPrefs.SetFloat("Mute", 0f);
+        toggleValue = toggle.isOn;
+
+        audioMixer.GetFloat("volume", out savedVolume);
+        audioMixer.SetFloat("volume", -80f);
     }
 
     private void UnmuteSound()
     {
-        //TODO unmute sound
         Debug.Log("Sound unmuted");
-        PlayerPrefs.SetFloat("Mute", 1f);
+        toggleValue = toggle.isOn;
+
+        audioMixer.SetFloat("volume", savedVolume);
     }
 
     private void ChangeVolume(float volume)
     {
-        //TODO change sound volume level
         Debug.Log("Volume level changed to: " + volume);
-        PlayerPrefs.SetFloat("MasterVolume", volume);
+        sliderValue = slider.value;
+        savedVolume = volume;
+
+        if(!toggle.isOn)
+            audioMixer.SetFloat("volume", volume);
+
     }
 }

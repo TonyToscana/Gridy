@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour, HealthListener
             PlayerPrefs.SetString("elapsedTimeInLevel", FindObjectOfType<LevelManager>().GetTime());
             PlayerPrefs.SetInt("lastScore", Points.GetInstance().Number);
             PlayerPrefs.SetString("cameFromScene", SceneManager.GetActiveScene().name);
+            FindObjectOfType<AudioManager>().Stop("MainTheme");
             //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
 
             IData webData = new WebData(new Data());

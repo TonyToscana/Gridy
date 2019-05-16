@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 3706575643768844954}
   - component: {fileID: 4413698125814301891}
   - component: {fileID: 6198149989335192545}
-  - component: {fileID: -2439367022070900333}
   - component: {fileID: 3812993599166987037}
   m_Layer: 0
   m_Name: Character
@@ -101,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  animator: {fileID: 0}
   LastDirectionKey: 0
   PrevDirectionKey: 0
 --- !u!114 &2411977243638308452
@@ -115,9 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a01050303adcea40a18f50379affa78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialHealth: 3
-  MaxHealth: 3
-  MinHealth: 0
+  currentLives: 3
+  currentHealth: 100
 --- !u!114 &740125462425443840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,18 +209,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-2439367022070900333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4831872150217245275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a16fecf04a553f4fbcbbcbef711aa89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &3812993599166987037
 AudioSource:
   m_ObjectHideFlags: 0
