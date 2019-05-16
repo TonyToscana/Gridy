@@ -33,6 +33,18 @@ public class GameManager : MonoBehaviour, HealthListener
             PlayerPrefs.SetInt("lastScore", Points.GetInstance().Number);
             PlayerPrefs.SetString("cameFromScene", SceneManager.GetActiveScene().name);
             //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+
+            IData webData = new WebData(new Data());
+
+            ScoreData score = new ScoreData
+            {
+                points = Points.GetInstance().Number,
+                time = FindObjectOfType<LevelManager>().GetTime(),
+                name = "unknown"
+            };
+
+            Debug.Log(webData.Save("name", JsonUtility.ToJson(score, true)));
+
             SceneManager.LoadSceneAsync("GameOver");
         } 
     }
