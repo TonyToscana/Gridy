@@ -1,0 +1,485 @@
+fileFormatVersion: 2
+guid: ebdcc76c64fd0eb4791b5cf38e345dcf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2346166398819347800
+    second: Gallery_Template_with_Badges1_0
+  - first:
+      213: 1932504858922513113
+    second: Gallery_Template_with_Badges1_1
+  - first:
+      213: -3658414062687845587
+    second: Gallery_Template_with_Badges1_2
+  - first:
+      213: 4549816973477779874
+    second: Gallery_Template_with_Badges1_3
+  - first:
+      213: 2053048960341974859
+    second: Gallery_Template_with_Badges1_4
+  - first:
+      213: -1810779334806148220
+    second: Gallery_Template_with_Badges1_5
+  - first:
+      213: 3777948200964805928
+    second: Gallery_Template_with_Badges1_6
+  - first:
+      213: 8508414116701481181
+    second: Gallery_Template_with_Badges1_7
+  - first:
+      213: -465627266787147844
+    second: Gallery_Template_with_Badges1_8
+  - first:
+      213: 978621431497614690
+    second: Gallery_Template_with_Badges1_9
+  - first:
+      213: -3439043040107420544
+    second: Gallery_Template_with_Badges1_10
+  - first:
+      213: -7636754407808467960
+    second: Gallery_Template_with_Badges1_11
+  - first:
+      213: -1446269840505532981
+    second: Gallery_Template_with_Badges1_12
+  - first:
+      213: 1818506467322844748
+    second: Gallery_Template_with_Badges1_13
+  - first:
+      213: -8968250572622333137
+    second: Gallery_Template_with_Badges1_14
+  - first:
+      213: 3721883708503409015
+    second: Gallery_Template_with_Badges1_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 485
+        width: 169
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecadbdbc02171bf4d8d4784af7a61061
+      internalID: 2346166398819347800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_1
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 482
+        width: 146
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4aaa25a933fd24cba97fd576f9ed62
+      internalID: 1932504858922513113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_2
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 479
+        width: 175
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d52e7255e2b7d848b80bbb3236b6da6
+      internalID: -3658414062687845587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_3
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 486
+        width: 112
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3febd5936331b440971b925553f4f19
+      internalID: 4549816973477779874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_4
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 465
+        width: 202
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7df55e57ae06242bca0f4e3ccbdb41
+      internalID: 2053048960341974859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_5
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 231
+        width: 111
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c83c4652226224abf8bdf8204bcd6b
+      internalID: -1810779334806148220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_6
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 230
+        width: 137
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c693b7804f3ab41a2e35997111bcbd
+      internalID: 3777948200964805928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_7
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 227
+        width: 212
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a650a2c5e12324dab0a85af3f8c8c4
+      internalID: 8508414116701481181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_8
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 229
+        width: 172
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d62120068bc732945b2f159dbf94acf2
+      internalID: -465627266787147844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_9
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 229
+        width: 217
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84c9cdd0ec2b77498bc388780a29167
+      internalID: 978621431497614690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_10
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 192
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc19b2fb175ed24ca8dabc3318166b5
+      internalID: -3439043040107420544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_11
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 11
+        width: 162
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe50d16c30c62742b2ff0fa4c02cfad
+      internalID: -7636754407808467960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_12
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 38
+        width: 104
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 920540cf05fce40458a26c7e86af5e41
+      internalID: -1446269840505532981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_13
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 32
+        width: 178
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97da63b09b2ce65448fba2d83929018a
+      internalID: 1818506467322844748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_14
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 11
+        width: 129
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b6bf13fee248546aea6978e11ebff8
+      internalID: -8968250572622333137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gallery_Template_with_Badges1_15
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 27
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873bac3b9ec8e4249b33edc5858b769f
+      internalID: 3721883708503409015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7cd803fe80f39b44bbf885a4431d6dfb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
