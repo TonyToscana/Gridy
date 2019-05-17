@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5186653521673606653}
   - component: {fileID: 4468699337920530913}
   m_Layer: 0
-  m_Name: dirt_15 (1)
-  m_TagString: Untagged
+  m_Name: dirt_15
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

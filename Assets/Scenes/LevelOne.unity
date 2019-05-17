@@ -156,8 +156,8 @@ MonoBehaviour:
       prefab: {fileID: 199319901299616809, guid: 5ffba5189b18ee4428e07cf54e9a2159,
         type: 3}
       autoRotate: 0
-      LayerZIndex: 5
-      UseLayerZIndex: 1
+      LayerZIndex: 0
+      UseLayerZIndex: 0
     - color: {r: 1, g: 0, b: 0, a: 1}
       prefab: {fileID: 1756989231318456707, guid: 09ebf4a95a02dad4c8f9561f056ea3ec,
         type: 3}
