@@ -11,6 +11,8 @@ public class DialogHolder : MonoBehaviour
     [SerializeField] public ParticleSystem particles;
 
     private bool inside = false;
+    private List<GameObject> pathToGo = new List<GameObject>();
+    private bool moveRPC = false;
 
     void Start()
     {
@@ -76,34 +78,13 @@ public class DialogHolder : MonoBehaviour
             x => Vector2.Distance(door.transform.position, x.transform.position)
         ).Reverse().ToList();
 
-        StartCoroutine(Move(paths, door, doors));
-
-    }
-    
-    IEnumerator Move(List<GameObject> paths, GameObject door, GameObject[] doors)
-    {
+        moveRPC = true;
         bool startMove = false;
         float totalDist = Vector2.Distance(paths.Last().transform.position, this.gameObject.transform.position) * 1.5f;
-        GameObject prev = null;
-        GameObject next = null;
-
-        int index = 0;
-        int index2 = 0;
 
         foreach (GameObject obj in paths)
         {
             float distance = Vector2.Distance(obj.transform.position, this.gameObject.transform.position);
-
-            if (index2++ % 2 == 0) continue;
-
-            if (index <= paths.Count - 1)
-            {
-                next = paths[index + 1];
-            }
-            else
-            {
-                next = null;
-            }
 
             if (distance < 1)
             {
@@ -112,38 +93,24 @@ public class DialogHolder : MonoBehaviour
 
             if (startMove)
             {
-                if (prev != null && (Vector2.Distance(prev.transform.position, door.transform.position) < Vector2.Distance(obj.transform.position, door.transform.position)))
-                {
-                    continue;
-                }
-
-                if (next != null && (Vector2.Distance(next.transform.position, door.transform.position) < Vector2.Distance(obj.transform.position, door.transform.position)))
-                {
-                    continue;
-                }
-                
-                float step = totalDist * Time.deltaTime;
-                
-                if (Vector2.Distance(gameObject.transform.position, obj.transform.position) > 4f)
-                {
-                    continue;
-                }
-
-                this.gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, obj.transform.position, Time.deltaTime * totalDist);
-
-                yield return new WaitForSeconds(0.3f);
-
-                prev = obj;
-
+                this.pathToGo.Add(obj);
             }
-
-            index++;
         }
 
-        foreach (var currDoor in doors)
-        {
-            currDoor.GetComponent<Renderer>().enabled = false;
-        }
+        queue = new Queue<GameObject>(this.pathToGo);
+    }
+    
+    IEnumerator Move(GameObject[] doors)
+    {
+        Vector2 newPositionDoor = new Vector2(doors[0].transform.position.x - 5f, doors[0].transform.position.y);
+
+        doors[0].transform.position =
+            Vector3.Lerp(doors[0].transform.position, newPositionDoor, Time.deltaTime * 0.5f);
+
+        newPositionDoor = new Vector2(doors[1].transform.position.x + 5f, doors[1].transform.position.y);
+
+        doors[1].transform.position =
+            Vector3.Lerp(doors[1].transform.position, newPositionDoor, Time.deltaTime * 5f);
 
         yield return new WaitForSeconds(1f);
 
@@ -151,16 +118,56 @@ public class DialogHolder : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        foreach (var currDoor in doors)
-        {
-            currDoor.GetComponent<Renderer>().enabled = true;
-        }
+        Vector2 newPositionDoorClose = new Vector2(doors[0].transform.position.x + 5f, doors[0].transform.position.y);
+
+        doors[0].transform.position =
+            Vector3.Lerp(doors[0].transform.position, newPositionDoorClose, Time.deltaTime * 0.5f);
+
+        newPositionDoorClose = new Vector2(doors[1].transform.position.x - 5f, doors[1].transform.position.y);
+
+        doors[1].transform.position =
+            Vector3.Lerp(doors[1].transform.position, newPositionDoorClose, Time.deltaTime * 5f);
+
 
         Destroy(this.gameObject);
     }
+    
+    private readonly float speed = 6.0f;
+    private Vector2 startPoint;
+    private GameObject nextDestination = null;
+    private Queue<GameObject> queue = new Queue<GameObject>();
 
     void Update()
     {
-        
+        if (moveRPC == false)
+        {
+            return;
+        }
+        else
+        {
+            startPoint = new Vector2(transform.position.x, transform.position.y);
+        }
+
+        if (this.queue.Count <= 0 && moveRPC)
+        {
+            moveRPC = false;
+            GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
+
+            transform.position = doors[0].transform.position;
+            StartCoroutine(Move(doors));
+        }
+
+
+        // Distance moved = time * speed.
+        float distCovered = Time.deltaTime * speed;
+
+        if (nextDestination == null || Vector2.Distance(transform.position, nextDestination.transform.position) <= 2)
+        {
+            if (this.queue.Count > 0) nextDestination = queue.Dequeue();
+            if (this.queue.Count > 0) nextDestination = queue.Dequeue();
+            if (this.queue.Count > 0) nextDestination = queue.Dequeue();
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, nextDestination.transform.position, distCovered);
     }
 }
