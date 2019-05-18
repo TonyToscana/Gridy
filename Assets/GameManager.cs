@@ -116,4 +116,8 @@ public class GameManager : MonoBehaviour, HealthListener
     {
         //code to go to main menu
     }
+
+    public void OnLifeConsumed(int CurrentHealth, int CurrentLife, Health health)
+    {
+    }
 }

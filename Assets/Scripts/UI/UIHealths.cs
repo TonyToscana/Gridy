@@ -70,17 +70,21 @@ public class UIHealths : MonoBehaviour, HealthListener
 
     public void OnDamage(int CurrentHealth, Health health)
     {
-        if (HeartInstances.Count > 0)
-        {
-            Debug.Log("Are heartInstance null? " + (HeartInstances.Dequeue() == null).ToString());
-            //Destroy(HeartInstances.Dequeue());
-            HeartInstances.Dequeue().GetComponent<Image>().enabled = false;
-        }
     }
 
     private void OnDisable()
     {
         //Health.RemoveListener(this);
         Debug.Log("OnDisble executed:");
+    }
+
+    public void OnLifeConsumed(int CurrentHealth, int CurrentLife, Health health)
+    {
+        if (HeartInstances.Count > 0)
+        {
+            Debug.Log("Are heartInstance null? " + (HeartInstances.Dequeue() == null).ToString());
+            //Destroy(HeartInstances.Dequeue());
+            HeartInstances.Dequeue().GetComponent<Image>().enabled = false;
+        }
     }
 }

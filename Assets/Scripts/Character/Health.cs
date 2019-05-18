@@ -1,37 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     public int currentLives = 3;
     private int maxLives = 3;
     private int minLives = 0;
-    public int currentHealth = 100;
+    public int CurrentHealth = 100;
     private int maxHealth = 100;
     private int minHealth = 0;
     private int MinHealth = 0;
 
-
+    private Image HealthBar;
     private IList<HealthListener> Handlers;
-
-    private int _currentHealth;
-    public int CurrentHealth
+    
+    public void Awake()
     {
-        get
-        {
-            return _currentHealth;
-        }
-
-        private set
-        {
-            _currentHealth = value;
-        }
+        this.HealthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<Image>();
     }
 
     public void Start()
     {
-        this.CurrentHealth = 3;
         this.Handlers = new List<HealthListener>();
     }
 
@@ -39,6 +30,7 @@ public class Health : MonoBehaviour
     {
         if (GameObject.FindObjectsOfType<Power>().Length == 0)
         {
+
             this.CurrentHealth -= damage;
 
             if (Handlers == null) return;
@@ -50,11 +42,27 @@ public class Health : MonoBehaviour
 
             if (this.CurrentHealth <= this.MinHealth)
             {
+                this.CurrentHealth = this.maxHealth;
+
+                this.currentLives -= 1;
+
+
                 foreach (var item in this.Handlers)
                 {
-                    item.OnDeath(this.CurrentHealth, this);
+                    item.OnLifeConsumed(this.CurrentHealth, this.currentLives, this);
+                }
+
+                if (this.currentLives <= 0)
+                {
+                    foreach (var item in this.Handlers)
+                    {
+                        item.OnDeath(this.currentLives, this);
+                    }
                 }
             }
+
+            this.HealthBar.fillAmount = (float)this.CurrentHealth / 100f;
+
         }
     }
 

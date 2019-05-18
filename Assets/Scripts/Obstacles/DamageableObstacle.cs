@@ -5,33 +5,25 @@ using UnityEngine;
 public class DamageableObstacle : MonoBehaviour
 {
     [SerializeField] public int DamageDone = 0;
+    [SerializeField] public float DamageRate = 2.0f;
 
     SpriteRenderer spRndrer;
+    private float NextDamage;
 
     void OnCollisionEnter2D(Collision2D col)
     {
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (!(Time.time > NextDamage)) return;
+
         Health playerHealth = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Health>();
 
         if (col.gameObject.tag != "Player") return;
 
+        NextDamage = Time.time + DamageRate;
         playerHealth.Damage(DamageDone);
-    }
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        Health playerHealth = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Health>();
-
-        if (collision.gameObject.tag != "Player") return;
-
-        playerHealth.Damage(DamageDone);
-
-        //collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 0.00009f, ForceMode2D.Impulse);
-        //collision.gameObject.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
-
-        spRndrer = collision.gameObject.GetComponent<SpriteRenderer>();
-
-        //StartCoroutine(Flash(0.05f));
-        //StartCoroutine(Knockback(0f, collision.gameObject.GetComponent<Rigidbody2D>(), collision.gameObject.transform.position));
     }
 
     void Start()
@@ -54,11 +46,11 @@ public class DamageableObstacle : MonoBehaviour
        // var y = transform.position.x - rb2d.transform.position.x;
 
 
-        rb2d.AddForce(new Vector2(x, y), ForceMode2D.Impulse);
+        //rb2d.AddForce(new Vector2(x, y), ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(0.3f);
 
-        rb2d.velocity = Vector3.zero;
+        //rb2d.velocity = Vector3.zero;
 
         yield return 0;
     }
