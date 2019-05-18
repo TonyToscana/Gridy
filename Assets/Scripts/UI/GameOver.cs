@@ -23,7 +23,7 @@ public class GameOver : MonoBehaviour
 
     public void ShowScoreBoard()
     {
-        Debug.Log("clickd");
+        scoreBoard.GetComponent<ScoreTextUIDisplay>().showData = true;
         scoreBoard.SetActive(true);
     }
 
