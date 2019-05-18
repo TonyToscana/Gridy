@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 4117139060420676996}
   - component: {fileID: 8060499033236713469}
   - component: {fileID: 1479522814999018637}
+  - component: {fileID: 6514899124169146513}
   m_Layer: 0
   m_Name: WoodSpike
   m_TagString: Untagged
@@ -218,3 +219,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.82567215}
   serializedVersion: 2
   m_Radius: 0.86756325
+--- !u!114 &6514899124169146513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4117139060420676997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafbea080851952429c6e620470f795d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageDone: 30
+  DamageRate: 2
