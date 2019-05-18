@@ -35,16 +35,23 @@ public class GameManager : MonoBehaviour, HealthListener
             FindObjectOfType<AudioManager>().Stop("MainTheme");
             //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
 
-            IData webData = new WebData(new Data());
-
-            ScoreData score = new ScoreData
+            try
             {
-                points = Points.GetInstance().Number,
-                time = FindObjectOfType<LevelManager>().GetTime(),
-                name = "unknown"
-            };
 
-            Debug.Log(webData.Save("name", JsonUtility.ToJson(score, true)));
+            }
+            catch (Exception e)
+            {
+                IData webData = new WebData(new Data());
+
+                ScoreData score = new ScoreData
+                {
+                    points = Points.GetInstance().Number,
+                    time = FindObjectOfType<LevelManager>().GetTime(),
+                    name = "unknown"
+                };
+
+                Debug.Log(webData.Save("name", JsonUtility.ToJson(score, true)));
+            }
 
             SceneManager.LoadSceneAsync("GameOver");
         } 
