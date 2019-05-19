@@ -9,8 +9,11 @@ public class ScoreTextUIDisplay : MonoBehaviour
 {
     [SerializeField] public Text text;
     [SerializeField] public GameObject panel;
+    [SerializeField] public Text switchText;
 
     [HideInInspector] public bool showData = true;
+
+    private bool globalScoreOn = true;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +48,38 @@ public class ScoreTextUIDisplay : MonoBehaviour
         }
 
         return result.ToString();
+    }
+
+    public void OnSwitchBtnClick()
+    {
+        if (!globalScoreOn)
+        {
+            ShowData();
+            switchText.text = "Local Ranking";
+        } 
+        else
+        {
+            object loadData = SaveSystem.Load();
+
+            if (loadData != null)
+            {
+                List<ScoreData> scoreDataList = loadData as List<ScoreData>;
+
+                StringBuilder result = new StringBuilder();
+
+                for (int i = 0; i < scoreDataList.Count; i++)
+                {
+                    result.Append(scoreDataList[i].name).Append("\t").Append(scoreDataList[i].points).Append("\t").Append(scoreDataList[i].time).Append("\n");
+                }
+
+                this.text.text = result.ToString();
+            }
+
+            switchText.text = "World Ranking";
+
+        }
+
+        globalScoreOn = !globalScoreOn;
     }
 
     public void OnCloseScoreBtnClick()

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject optionsMenu;
+    public GameObject scoreBoard;
+
     public void OnStartClicked()
     {
         StartGame();
@@ -44,7 +46,7 @@ public class MainMenu : MonoBehaviour
 
     void ShowRanking()
     {
-        //Code to show the ranking
-        //SceneManager.LoadScene("Ranking");
+        scoreBoard.GetComponent<ScoreTextUIDisplay>().showData = true;
+        scoreBoard.SetActive(true);
     }
 }

@@ -539,6 +539,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132790754}
   m_CullTransparentMesh: 0
+--- !u!114 &359198206 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2293457062258212908, guid: 267291d3e03f91b40a7a689808b2ab1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1281360660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &436122409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,6 +1356,23 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784032478691226049, guid: 267291d3e03f91b40a7a689808b2ab1c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715248065210872412, guid: 267291d3e03f91b40a7a689808b2ab1c,
+        type: 3}
+      propertyPath: switchText
+      value: 
+      objectReference: {fileID: 359198206}
+    - target: {fileID: 2293457062258212908, guid: 267291d3e03f91b40a7a689808b2ab1c,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Local Ranking
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 267291d3e03f91b40a7a689808b2ab1c, type: 3}

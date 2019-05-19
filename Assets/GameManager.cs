@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,22 +36,43 @@ public class GameManager : MonoBehaviour, HealthListener
             FindObjectOfType<AudioManager>().Stop("MainTheme");
             //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
 
-            try
+            ScoreData score = new ScoreData
             {
+                points = Points.GetInstance().Number,
+                time = FindObjectOfType<LevelManager>().GetTime(),
+                name = "unknown"
+            };
 
-            }
-            catch (Exception e)
+            try
             {
                 IData webData = new WebData(new Data());
 
-                ScoreData score = new ScoreData
-                {
-                    points = Points.GetInstance().Number,
-                    time = FindObjectOfType<LevelManager>().GetTime(),
-                    name = "unknown"
-                };
+                webData.Save("name", JsonUtility.ToJson(score, true));
+            }
+            catch (Exception e)
+            {
+                
+            }
 
-                Debug.Log(webData.Save("name", JsonUtility.ToJson(score, true)));
+            object loadData = SaveSystem.Load();
+
+            if (loadData == null)
+            {
+                SaveSystem.Save(new List<ScoreData>() { score });
+            }
+            else
+            {
+                List<ScoreData> scoreDataList = loadData as List<ScoreData>;
+
+                if (scoreDataList == null)
+                {
+                    scoreDataList = new List<ScoreData>();
+                }
+
+                scoreDataList.Add(score);
+                scoreDataList = scoreDataList.OrderBy(x => x.points).Reverse().Take(10).ToList();
+
+                SaveSystem.Save(scoreDataList);
             }
 
             SceneManager.LoadSceneAsync("GameOver");
