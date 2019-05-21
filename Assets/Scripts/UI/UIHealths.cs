@@ -10,7 +10,7 @@ public class UIHealths : MonoBehaviour, HealthListener
     private GameObject CharacterObject;
     private Health Health;
     private bool InitialHealthRender = false;
-    private Queue<GameObject> HeartInstances;
+    private Queue<Image> HeartInstances;
     private bool healthListenerSet = false;
 
     //[SerializeField] public GameObject HeartPrefab = null;
@@ -19,19 +19,13 @@ public class UIHealths : MonoBehaviour, HealthListener
     void Start()
     {
         Debug.Log("UI start executed");
-        HeartInstances = new Queue<GameObject>();
+        HeartInstances = new Queue<Image>();
         List<GameObject> children = new List<GameObject>();
 
-        int i = 0;
-        foreach (Transform child in GetComponentsInChildren<Transform>())
+        foreach (Image child in GetComponentsInChildren<Image>())
         {
-            //Debug.Log("Is child null? " + (child == null).ToString());
-            //Debug.Log(child.GetSiblingIndex());
-            //children.Insert(child.GetSiblingIndex(), child.gameObject);
-            HeartInstances.Enqueue(child.gameObject);
+            HeartInstances.Enqueue(child);
         }
-
-        //children.ForEach(x => HeartInstances.Enqueue(x));
     }
 
     // Update is called once per frame
@@ -50,7 +44,7 @@ public class UIHealths : MonoBehaviour, HealthListener
 
                 if(!healthListenerSet)
                 {
-                    Debug.Log("SetListener executed");
+                    //Debug.Log("SetListener executed");
                     healthListenerSet = true;
                     Health?.SetListener(this);
                 }
@@ -70,21 +64,17 @@ public class UIHealths : MonoBehaviour, HealthListener
 
     public void OnDamage(int CurrentHealth, Health health)
     {
+        if (HeartInstances.Count > 0)
+        {
+            Image image = HeartInstances.Dequeue();
+            if(image != null)
+                image.enabled = false;
+        }
     }
 
     private void OnDisable()
     {
         //Health.RemoveListener(this);
         Debug.Log("OnDisble executed:");
-    }
-
-    public void OnLifeConsumed(int CurrentHealth, int CurrentLife, Health health)
-    {
-        if (HeartInstances.Count > 0)
-        {
-            Debug.Log("Are heartInstance null? " + (HeartInstances.Dequeue() == null).ToString());
-            //Destroy(HeartInstances.Dequeue());
-            HeartInstances.Dequeue().GetComponent<Image>().enabled = false;
-        }
     }
 }
