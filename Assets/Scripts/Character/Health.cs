@@ -101,4 +101,20 @@ public class Health : MonoBehaviour
         this.Handlers.Remove(listener);
     }
 
+    public void AddLife(int amount)
+    {
+        if (this.currentLives + amount > this.maxLives)
+        {
+            return;
+        }
+
+        this.currentLives += amount;
+
+        if (Handlers == null) return;
+
+        foreach (var item in this.Handlers)
+        {
+            item.OnNewLife(this.currentLives, this);
+        }
+    }
 }

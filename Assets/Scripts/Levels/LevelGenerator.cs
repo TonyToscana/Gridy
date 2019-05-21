@@ -25,10 +25,13 @@ public class LevelGenerator : MonoBehaviour
 
     private int overlay = 0;
 
+    [HideInInspector] public bool Finish = false;
+
     // Start is called before the first frame update
     void Start()
     {
         RenderLevel();
+        Finish = true;
     }
 
     private void RenderLevel()

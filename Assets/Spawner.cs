@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
         */
         foreach (var obj in SpawnObj)
         {
-            if (((obj.maxSpawns - 1) > obj.currentSpawns || obj.maxSpawns == -1) && Time.time > obj.lastSpawn)
+            if ((obj.maxSpawns > obj.currentSpawns || obj.maxSpawns == -1) && Time.time > obj.lastSpawn)
             {
                 spawnObject(obj.spawnPrefab);
 
@@ -90,6 +90,6 @@ public class SpawnObject
     public float maxSpawns = -1;
     
 
-    [HideInInspector] public float currentSpawns;
+    [HideInInspector] public float currentSpawns = 0;
     [HideInInspector] public float lastSpawn;
 }

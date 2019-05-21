@@ -49,7 +49,7 @@ public class DialogManager : MonoBehaviour
             if (this.CurrentMessage != null && this.CurrentMessage.Command != null && !this.CurrentMessage.Command.Equals(""))
             {
                 ICommand cmd = this.commandInvoker.GetCommand(this.CurrentMessage.Command);
-                cmd?.Execute();
+                cmd?.Execute(this.gameObject);
             }
 
             this.MethodReaded(this.QueueText.Count);

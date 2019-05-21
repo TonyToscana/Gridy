@@ -66,12 +66,15 @@ public class UIHealths : MonoBehaviour, HealthListener
 
     public void OnHeal(int CurrentHealth, Health health)
     {
+<<<<<<< HEAD
+=======
         if(HeartInstances.Count < 3)
         {
-           // GameObject heart = DequeuedHeartInstances.Dequeue();
-            //heart.GetComponent<Image>().enabled = true;
-            //HeartInstances.Enqueue(heart);
+            GameObject heart = DequeuedHeartInstances.Dequeue();
+            heart.GetComponent<Image>().enabled = true;
+            HeartInstances.Enqueue(heart);
         }
+>>>>>>> e52d205f143e720f6b01c85388684aed0afd5708
         
     }
 
