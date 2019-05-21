@@ -11,6 +11,7 @@ public class UIHealths : MonoBehaviour, HealthListener
     private Health Health;
     private bool InitialHealthRender = false;
     private Queue<GameObject> HeartInstances;
+    private Queue<GameObject> DequeuedHeartInstances;
     private bool healthListenerSet = false;
 
     //[SerializeField] public GameObject HeartPrefab = null;
@@ -20,6 +21,7 @@ public class UIHealths : MonoBehaviour, HealthListener
     {
         Debug.Log("UI start executed");
         HeartInstances = new Queue<GameObject>();
+        DequeuedHeartInstances = new Queue<GameObject>();
         List<GameObject> children = new List<GameObject>();
 
         int i = 0;
@@ -65,16 +67,25 @@ public class UIHealths : MonoBehaviour, HealthListener
 
     public void OnHeal(int CurrentHealth, Health health)
     {
-
+        if(HeartInstances.Count < 3)
+        {
+            GameObject heart = DequeuedHeartInstances.Dequeue();
+            heart.GetComponent<Image>().enabled = true;
+            HeartInstances.Enqueue(heart);
+        }
+        
     }
 
     public void OnDamage(int CurrentHealth, Health health)
     {
         if (HeartInstances.Count > 0)
         {
-            Debug.Log("Are heartInstance null? " + (HeartInstances.Dequeue() == null).ToString());
+            Debug.Log("Are heartInstance null? " + (HeartInstances.Peek() == null).ToString());
             //Destroy(HeartInstances.Dequeue());
-            HeartInstances.Dequeue().GetComponent<Image>().enabled = false;
+            GameObject heart = HeartInstances.Dequeue();
+            heart.GetComponent<Image>().enabled = false;
+            DequeuedHeartInstances.Enqueue(heart);
+
         }
     }
 

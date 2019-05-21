@@ -23,7 +23,7 @@ public class Consumable : MonoBehaviour
         if (pickUpAllowed && Input.GetKeyDown("space"))
         {
             taken = true;
-            Points.GetInstance().Add(calories);
+            DoAction();
             //AudioSource.PlayClipAtPoint(CoinPicked, transform.position);
             FindObjectOfType<AudioManager>().Play("CoinPicked");
             FindObjectOfType<GameManager>().removeConsumable();
@@ -47,5 +47,9 @@ public class Consumable : MonoBehaviour
         }
     }
 
+    virtual protected void DoAction()
+    {
+        Points.GetInstance().Add(calories);
+    }
 
 }
