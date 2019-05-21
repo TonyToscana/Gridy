@@ -64,17 +64,21 @@ public class UIHealths : MonoBehaviour, HealthListener
 
     public void OnDamage(int CurrentHealth, Health health)
     {
-        if (HeartInstances.Count > 0)
-        {
-            Image image = HeartInstances.Dequeue();
-            if(image != null)
-                image.enabled = false;
-        }
     }
 
     private void OnDisable()
     {
         //Health.RemoveListener(this);
         Debug.Log("OnDisble executed:");
+    }
+
+    public void OnLifeConsumed(int CurrentHealth, int CurrentLife, Health health)
+    {
+        if (HeartInstances.Count > 0)
+        {
+            Image image = HeartInstances.Dequeue();
+            if (image != null)
+                image.enabled = false;
+        }
     }
 }
