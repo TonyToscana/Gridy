@@ -186,4 +186,8 @@ public class GameManager : MonoBehaviour, HealthListener
     public void OnLifeConsumed(int CurrentHealth, int CurrentLife, Health health)
     {
     }
+
+    public void OnNewLife(int CurrentLifes, Health health)
+    {
+    }
 }

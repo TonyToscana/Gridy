@@ -79,4 +79,9 @@ public class UIHealth : MonoBehaviour, HealthListener
             //HeartInstances.Dequeue().GetComponent<Image>().enabled = false;
         }
     }
+
+    public void OnNewLife(int CurrentLifes, Health health)
+    {
+        throw new System.NotImplementedException();
+    }
 }

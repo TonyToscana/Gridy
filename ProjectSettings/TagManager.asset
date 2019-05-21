@@ -10,6 +10,7 @@ TagManager:
   - HealthBar
   - grass
   - bloodImage
+  - enemy
   layers:
   - Default
   - TransparentFX

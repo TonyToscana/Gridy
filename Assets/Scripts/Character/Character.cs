@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour, ILoocable
 {
     
     [SerializeField] public float speed = 4.4f;
     public Animator animator;
     [HideInInspector] public KeyCode LastDirectionKey = KeyCode.None;
     [HideInInspector] public KeyCode PrevDirectionKey = KeyCode.None;
+    [HideInInspector] public bool isFacingLeft = false;
     [HideInInspector] public IList<string> MovementKeysList = new List<string> { "UpArrow", "DownArrow", "LeftArrow", "RightArrow", "A", "S", "D", "W" };
 
 
@@ -22,6 +23,7 @@ public class Character : MonoBehaviour
 
         this.commandInvoker.SetAlias(this.MovementKeysList, "Move");
         this.commandInvoker.SetAlias("Q", "Shield");
+        this.commandInvoker.SetAlias("F", "Shoot");
     }
 
     // Update is called once per frame
@@ -57,7 +59,7 @@ public class Character : MonoBehaviour
                 if (Input.GetKey(item))
                 {
                     ICommand cmd = this.commandInvoker.GetCommand(item.ToString());
-                    cmd?.Execute();
+                    cmd?.Execute(this.gameObject);
                     break;
                 }
             }
@@ -66,5 +68,10 @@ public class Character : MonoBehaviour
         {
             GetComponent<AudioSource>().Pause();
         }
+    }
+
+    public bool IsLookingLeft()
+    {
+        return isFacingLeft;
     }
 }

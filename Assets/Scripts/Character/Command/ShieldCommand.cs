@@ -16,7 +16,7 @@ public class ShieldCommand : MonoBehaviour, ICommand
     }
 
 
-    public void Execute()
+    public void Execute(GameObject obj)
     {
         if (!used)
         {

@@ -24,7 +24,7 @@ public class MoveCommand : ICommand
         return Vector2.zero;
     }
 
-    public void Execute()
+    public void Execute(GameObject obj)
     {
         GameObject[] playerTag = GameObject.FindGameObjectsWithTag("Player");
 
@@ -65,6 +65,11 @@ public class MoveCommand : ICommand
                     playerTag[0].transform.localScale = Vector3.Scale(playerTag[0].transform.localScale, new Vector3(-1, 1, 1));
                 }
             } 
+        }
+
+        if (move.x != 0f)
+        {
+            character.isFacingLeft = (move.x < 0);
         }
 
         playerTag[0].transform.localPosition += move * character.speed * Time.deltaTime;

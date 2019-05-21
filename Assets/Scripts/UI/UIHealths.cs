@@ -1,6 +1,4 @@
-﻿
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +8,8 @@ public class UIHealths : MonoBehaviour, HealthListener
     private GameObject CharacterObject;
     private Health Health;
     private bool InitialHealthRender = false;
-    private Queue<Image> HeartInstances;
+    private Queue<GameObject> HeartInstances;
+    private Queue<GameObject> DequeuedHeartInstances;
     private bool healthListenerSet = false;
 
     //[SerializeField] public GameObject HeartPrefab = null;
@@ -19,13 +18,21 @@ public class UIHealths : MonoBehaviour, HealthListener
     void Start()
     {
         Debug.Log("UI start executed");
-        HeartInstances = new Queue<Image>();
+        HeartInstances = new Queue<GameObject>();
+        DequeuedHeartInstances = new Queue<GameObject>();
         List<GameObject> children = new List<GameObject>();
 
+        int i = 0;
         foreach (Image child in GetComponentsInChildren<Image>())
         {
-            HeartInstances.Enqueue(child);
+
+            //Debug.Log("Is child null? " + (child == null).ToString());
+            //Debug.Log(child.GetSiblingIndex());
+            //children.Insert(child.GetSiblingIndex(), child.gameObject);
+            HeartInstances.Enqueue(child.gameObject);
         }
+
+        //children.ForEach(x => HeartInstances.Enqueue(x));
     }
 
     // Update is called once per frame
@@ -38,17 +45,17 @@ public class UIHealths : MonoBehaviour, HealthListener
             if (this.CharacterObject != null)
             {
                 this.Health = this.CharacterObject.GetComponent<Health>();
-                
+
                 if (Health == null) Debug.LogError("Health is null");
                 if (this == null) Debug.LogError("this is null");
 
-                if(!healthListenerSet)
+                if (!healthListenerSet)
                 {
-                    //Debug.Log("SetListener executed");
+                    Debug.Log("SetListener executed");
                     healthListenerSet = true;
                     Health?.SetListener(this);
                 }
-                
+
             }
         }
     }
@@ -59,11 +66,12 @@ public class UIHealths : MonoBehaviour, HealthListener
 
     public void OnHeal(int CurrentHealth, Health health)
     {
-
+        
     }
 
     public void OnDamage(int CurrentHealth, Health health)
     {
+        
     }
 
     private void OnDisable()
@@ -72,13 +80,27 @@ public class UIHealths : MonoBehaviour, HealthListener
         Debug.Log("OnDisble executed:");
     }
 
+    public void OnNewLife(int CurrentLifes, Health health)
+    {
+        if (HeartInstances.Count < 3)
+        {
+            GameObject heart = DequeuedHeartInstances.Dequeue();
+            heart.GetComponent<Image>().enabled = true;
+            HeartInstances.Enqueue(heart);
+        }
+    }
+
     public void OnLifeConsumed(int CurrentHealth, int CurrentLife, Health health)
     {
         if (HeartInstances.Count > 0)
         {
-            Image image = HeartInstances.Dequeue();
-            if (image != null)
-                image.enabled = false;
+            Debug.Log("Are heartInstance null? " + (HeartInstances.Peek() == null).ToString());
+            //Destroy(HeartInstances.Dequeue());
+            
+            GameObject heart = HeartInstances.Dequeue();
+            heart.GetComponent<Image>().enabled = false;
+            DequeuedHeartInstances.Enqueue(heart);
+
         }
     }
 }
