@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     private int MinHealth = 0;
 
     private Image HealthBar;
-    private IList<HealthListener> Handlers;
+    private IList<HealthListener> Handlers = new List<HealthListener>();
     
     public void Awake()
     {
@@ -23,7 +23,20 @@ public class Health : MonoBehaviour
 
     public void Start()
     {
-        this.Handlers = new List<HealthListener>();
+    }
+
+    public void SetCurrentHealth(int amount)
+    {
+        if (this.CurrentHealth < amount && Handlers != null)
+        {
+            foreach (var item in this.Handlers)
+            {
+                item.OnHeal(this.CurrentHealth, this);
+            }
+        }
+
+        this.CurrentHealth = amount;
+        this.HealthBar.fillAmount = (float)this.CurrentHealth / 100f;
     }
 
     public void Damage(int damage)
@@ -68,7 +81,7 @@ public class Health : MonoBehaviour
 
     public void Heal(int heal) 
     {
-        this.CurrentHealth += heal;
+        this.SetCurrentHealth(this.CurrentHealth + heal); 
 
         if (Handlers == null) return;
 

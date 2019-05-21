@@ -8,6 +8,8 @@ TagManager:
   - Path
   - Door
   - HealthBar
+  - grass
+  - bloodImage
   layers:
   - Default
   - TransparentFX

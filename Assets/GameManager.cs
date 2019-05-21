@@ -4,17 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour, HealthListener
 {
     public PauseMenu pauseMenu;
-
+    [SerializeField] public Image bloodDamagePattern;
+    [SerializeField] public Image healHalingPattern;
+    [SerializeField] public AudioClip damageAudio;
 
     private GameManager manager;
     private GameObject CharacterObject;
     private Health Health;
     private int consumables;
     private bool gameEnded = false;
+    private float healingDone = 0;
+    private bool damageTaken = false;
+    private bool healTaken = false;
 
     private bool HealthListenerSet = false;
     
@@ -22,6 +28,8 @@ public class GameManager : MonoBehaviour, HealthListener
 
     public void OnDamage(int CurrentHealth, Health health)
     {
+        damageTaken = true;
+        GetComponent<AudioSource>().PlayOneShot(damageAudio);
     }
 
     public void OnDeath(int CurrentHealth, Health health)
@@ -40,7 +48,7 @@ public class GameManager : MonoBehaviour, HealthListener
             {
                 points = Points.GetInstance().Number,
                 time = FindObjectOfType<LevelManager>().GetTime(),
-                name = "unknown"
+                name = PlayerPrefs.GetString("username")
             };
 
             try
@@ -95,6 +103,7 @@ public class GameManager : MonoBehaviour, HealthListener
 
     public void OnHeal(int CurrentHealth, Health health)
     {
+        healTaken = true;
     }
 
     // Start is called before the first frame update
@@ -108,6 +117,28 @@ public class GameManager : MonoBehaviour, HealthListener
     // Update is called once per frame
     void Update()
     {
+        if (damageTaken)
+        {
+            bloodDamagePattern.color = new Color(255, 0, 0);
+        }
+        else
+        {
+            bloodDamagePattern.color = Color.Lerp(bloodDamagePattern.color, Color.clear, 1f * Time.deltaTime);
+        }
+
+        if (healTaken)
+        {
+            healHalingPattern.color = new Color(0, 255, 0);
+        }
+        else
+        {
+            healHalingPattern.color = Color.Lerp(healHalingPattern.color, Color.clear, 1f * Time.deltaTime);
+        }
+
+        damageTaken = false;
+        healTaken = false;
+
+
         if (this.Health == null)
         {
             this.CharacterObject = GameObject.FindGameObjectWithTag("Player");
@@ -123,7 +154,13 @@ public class GameManager : MonoBehaviour, HealthListener
             Health.SetListener(this);
         }
 
-        if(consumables == 0 && !gameEnded)
+        if (Points.GetInstance().Number >= (int)((healingDone * 100) + 100))
+        {
+            this.Health.Heal(30);
+            healingDone++;
+        }
+
+        if (consumables == 0 && !gameEnded)
         {
             //SceneManager.LoadSceneAsync("LevelWon");
             this.gameEnded = true;

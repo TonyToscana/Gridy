@@ -16,8 +16,8 @@ public class GameOver : MonoBehaviour
     private void Start()
     {
         string time = PlayerPrefs.GetString("elapsedTimeInLevel");
-        this.timeText.text = "Tiempo \n" + time;
-        this.scoreText.text = "Calorías \n" + PlayerPrefs.GetInt("lastScore").ToString();
+        this.timeText.text = "Tiempo: " + time;
+        this.scoreText.text = "Puntos: " + PlayerPrefs.GetInt("lastScore").ToString();
         this.scoreWebText.text = "";
     }
 
@@ -29,6 +29,7 @@ public class GameOver : MonoBehaviour
 
     public void RestartGame()
     {
+        Debug.Log("GameRestart");
         ShieldCommand.setShieldNotUsed();       
         Points.GetInstance().Set(0);
         SceneManager.LoadSceneAsync(PlayerPrefs.GetString("cameFromScene"));

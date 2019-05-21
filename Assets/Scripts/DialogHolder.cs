@@ -42,9 +42,10 @@ public class DialogHolder : MonoBehaviour
         {
             DialogManager manager = FindObjectOfType<DialogManager>();
 
-            manager.AddMessage("Hello. I see you are new in the craft.")
-                   .AddMessage("This is a dangerous world. I will give you a shild to protext your self for 5 seconds.")
-                   .AddMessage("Press ENTER to get the shild.", "Shield")
+            manager.AddMessage("Hello. I see you are new in the craft..")
+                   .AddMessage("This is a dangerous world. I will give you a shild to protext your self for 5 seconds..")
+                   .AddMessage("Press [Q] to get the shild..")
+                   .AddMessage("For every 100 calories that you consume the damage you receive is reduce by 10%..")
                    .OnReaded(MessageReaded)
                    .ShowBox();
         }
