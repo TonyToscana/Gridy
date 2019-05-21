@@ -27,8 +27,8 @@ public class Timer : MonoBehaviour
     {
         int seconds = (int)(timeInSeconds % 60f);
         int minutes = (int)(timeInSeconds / 60f);
-        int hours = minutes % 60;
-        minutes /= 60;
+        int hours = minutes / 60;
+        minutes %= 60;
 
         return formatNumber(hours) + ":" + formatNumber(minutes) + ":" + formatNumber(seconds);
     }
