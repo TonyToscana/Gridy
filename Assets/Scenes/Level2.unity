@@ -1771,7 +1771,7 @@ MonoBehaviour:
       prefab: {fileID: 7316452789376228555, guid: 0b278b0b53708ca46b14e5821735ad89,
         type: 3}
       autoRotate: 0
-      LayerZIndex: 0
+      LayerZIndex: 1
       UseLayerZIndex: 1
     - color: {r: 1, g: 1, b: 1, a: 1}
       prefab: {fileID: 6757781706517561838, guid: 88801a427e998444faef7251636a0228,

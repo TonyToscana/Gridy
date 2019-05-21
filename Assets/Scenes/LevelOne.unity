@@ -457,7 +457,7 @@ MonoBehaviour:
   - map: {fileID: 2800000, guid: de795e28fcd161445bed87b4d72d58f6, type: 3}
     prefab:
     - color: {r: 0, g: 1, b: 0, a: 1}
-      prefab: {fileID: 455108143354079326, guid: fe43730512d7c9941aa6587f0fded77f,
+      prefab: {fileID: 4831872150217245275, guid: fe43730512d7c9941aa6587f0fded77f,
         type: 3}
       autoRotate: 0
       LayerZIndex: -6
@@ -671,6 +671,32 @@ MonoBehaviour:
         type: 3}
       autoRotate: 0
       LayerZIndex: -2
+      UseLayerZIndex: 1
+    - color: {r: 0, g: 0, b: 1, a: 1}
+      prefab: {fileID: 1393573119217107026, guid: e527b8ab8bfe2e3448a9a347ae313656,
+        type: 3}
+      autoRotate: 0
+      LayerZIndex: -2
+      UseLayerZIndex: 1
+  - map: {fileID: 2800000, guid: 4b8337ff551d56947b446a288a03412b, type: 3}
+    prefab:
+    - color: {r: 1, g: 0, b: 0, a: 1}
+      prefab: {fileID: 1606943042717116233, guid: 9dc03e3e27132374ab26c72071d47256,
+        type: 3}
+      autoRotate: 0
+      LayerZIndex: -1
+      UseLayerZIndex: 1
+    - color: {r: 0, g: 0, b: 0, a: 1}
+      prefab: {fileID: 1391255938325220633, guid: 745893d29397ac449927f5fc8d443bfb,
+        type: 3}
+      autoRotate: 0
+      LayerZIndex: -1
+      UseLayerZIndex: 1
+    - color: {r: 1, g: 1, b: 0, a: 1}
+      prefab: {fileID: 720751324368733092, guid: 64d83b820e5adbe4b8bb3bac8b3a866a,
+        type: 3}
+      autoRotate: 0
+      LayerZIndex: -1
       UseLayerZIndex: 1
     - color: {r: 0, g: 0, b: 1, a: 1}
       prefab: {fileID: 1393573119217107026, guid: e527b8ab8bfe2e3448a9a347ae313656,
@@ -2195,6 +2221,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8017320079964931168, guid: ac5e8d67074572a48be943a4c4a0bae5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150056283678784494, guid: ac5e8d67074572a48be943a4c4a0bae5,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 8017320079964931168}
     - target: {fileID: 500399180495127735, guid: ac5e8d67074572a48be943a4c4a0bae5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2298,16 +2334,6 @@ PrefabInstance:
     - target: {fileID: 500399180495127735, guid: ac5e8d67074572a48be943a4c4a0bae5,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5150056283678784494, guid: ac5e8d67074572a48be943a4c4a0bae5,
-        type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 8017320079964931168}
-    - target: {fileID: 8017320079964931168, guid: ac5e8d67074572a48be943a4c4a0bae5,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6788427994528901981, guid: ac5e8d67074572a48be943a4c4a0bae5,
