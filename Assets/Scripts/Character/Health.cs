@@ -81,6 +81,8 @@ public class Health : MonoBehaviour
 
     public void Heal(int heal) 
     {
+        if (this.CurrentHealth + heal > this.maxHealth) return;
+
         this.SetCurrentHealth(this.CurrentHealth + heal); 
 
         if (Handlers == null) return;
