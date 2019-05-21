@@ -110,13 +110,14 @@ public class GameManager : MonoBehaviour, HealthListener
     void Start()
     {
         this.gameEnded = false;
-        this.consumables = FindObjectsOfType<Consumable>().Length;
         this.manager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        this.consumables = FindObjectsOfType<Consumable>().Length;
+
         if (damageTaken)
         {
             bloodDamagePattern.color = new Color(255, 0, 0);
@@ -164,13 +165,28 @@ public class GameManager : MonoBehaviour, HealthListener
         {
             //SceneManager.LoadSceneAsync("LevelWon");
             this.gameEnded = true;
-            Debug.Log("YOU FUCKING WONERED");
+            Debug.Log("END +++ " + SceneManager.GetActiveScene().name);
+            switch(SceneManager.GetActiveScene().name)
+            {
+                case "LevelOne":
+                    SceneManager.LoadSceneAsync("Level2");
+                    //SceneManager.LoadSceneAsync("GameOver");
+                    Debug.Log("ENDsda " + SceneManager.GetActiveScene().name);
+
+                    break;
+                case "Level2":
+                    SceneManager.LoadSceneAsync("LevelThree");
+
+                    Debug.Log("ENDsda " + SceneManager.GetActiveScene().name);
+
+                    break;
+            }
         }
     }
 
     public void removeConsumable()
     {
-        this.consumables--;
+        //this.consumables--;
     }
 
     public void OpenOptionsMenu()
