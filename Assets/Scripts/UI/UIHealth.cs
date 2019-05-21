@@ -69,6 +69,10 @@ public class UIHealth : MonoBehaviour, HealthListener
 
     public void OnDamage(int CurrentHealth, Health health)
     {
+    }
+
+    public void OnLifeConsumed(int CurrentHealth, int CurrentLife, Health health)
+    {
         if (HeartInstances.Count > 0)
         {
             Destroy(HeartInstances.Dequeue());

@@ -259,3 +259,5 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
   boneGOs: []
   generateGOHierarchy: 0
+  textureAssetName: gameover
+  prefabAssetName: gameover_GO

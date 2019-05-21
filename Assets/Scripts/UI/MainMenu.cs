@@ -2,10 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject optionsMenu;
+    public GameObject scoreBoard;
+    public InputField userName;
+
+    public void Start()
+    {
+        if (PlayerPrefs.GetString("username") == null || PlayerPrefs.GetString("username").Equals(""))
+        {
+            userName.text = "Gridy";
+            PlayerPrefs.SetString("username", "Gridy");
+        }
+        else
+        {
+            userName.text = PlayerPrefs.GetString("username");
+        }
+    }
+
+    public void OnUsernameChange()
+    {
+        PlayerPrefs.SetString("username", userName.text);
+        PlayerPrefs.Save();
+    }
+
     public void OnStartClicked()
     {
         StartGame();
@@ -44,7 +67,7 @@ public class MainMenu : MonoBehaviour
 
     void ShowRanking()
     {
-        //Code to show the ranking
-        //SceneManager.LoadScene("Ranking");
+        scoreBoard.GetComponent<ScoreTextUIDisplay>().showData = true;
+        scoreBoard.SetActive(true);
     }
 }

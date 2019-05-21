@@ -290,46 +290,48 @@ ScriptedImporter:
       bones: 1200000007000000080000000b00000009000000100000000c0000000e0000000f0000000000000004000000140000000a00000006000000050000001300000002000000010000000d000000
     dimension: {x: 0, y: 0}
   boneGOs:
-  - go: {fileID: 4373878042572784091, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: -7056793603990545989, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 0
-  - go: {fileID: 2614928248294365856, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: -2464623298212414052, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 1
-  - go: {fileID: 51297757174974170, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: 1194295893291201547, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 2
-  - go: {fileID: -4005028626115471426, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: -4718728987080171991, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 3
-  - go: {fileID: 8025950351729157925, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: 5790525591539745029, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 4
-  - go: {fileID: -7204442317646962022, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: 6096171428786986553, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 5
-  - go: {fileID: 4590756585289567131, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: -4015184211099084925, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 6
-  - go: {fileID: -3274872912586063869, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: 3363406721689471907, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 7
-  - go: {fileID: -808509477000157916, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: 3127985212708783697, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 8
-  - go: {fileID: -6044468650658779650, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: 4974623670909156354, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 9
-  - go: {fileID: -8461918440826789080, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: 5811637139512402298, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 10
-  - go: {fileID: -1040203436991235867, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: -7947023012819747073, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 11
-  - go: {fileID: 5615065961289438836, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: -5493129987092997024, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 12
-  - go: {fileID: 8930187315268473479, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: -8902646691543913947, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 13
-  - go: {fileID: -5011773523537679017, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: -7841940938578235909, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 14
-  - go: {fileID: -2475512603344914391, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: -8606158876174086573, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 15
-  - go: {fileID: -3471228934441202062, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: -6837058851178936179, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 16
-  - go: {fileID: -5638034413859726444, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: -7211061650165174746, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 17
-  - go: {fileID: -1545031221718467926, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: 8142875702561936544, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 18
-  - go: {fileID: -8274373936850189992, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: 7282103497222929231, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 19
-  - go: {fileID: -1851639032019633335, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
+  - go: {fileID: -987482995477485198, guid: 056e8d82f7450fc40b9cb3f4e5734449, type: 3}
     index: 20
   generateGOHierarchy: 0
+  textureAssetName: darkHearth
+  prefabAssetName: darkHearth_GO

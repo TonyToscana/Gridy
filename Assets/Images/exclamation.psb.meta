@@ -928,12 +928,14 @@ ScriptedImporter:
       bones: 000000000100000002000000
     dimension: {x: 0, y: 0}
   boneGOs:
-  - go: {fileID: -7336911022479586399, guid: 5d1f39d52b947d942a1de50bac30c3ee, type: 3}
+  - go: {fileID: -1138795010358193611, guid: 5d1f39d52b947d942a1de50bac30c3ee, type: 3}
     index: 0
-  - go: {fileID: -6341646880649466854, guid: 5d1f39d52b947d942a1de50bac30c3ee, type: 3}
+  - go: {fileID: -8374883042623328779, guid: 5d1f39d52b947d942a1de50bac30c3ee, type: 3}
     index: 1
-  - go: {fileID: -5697138211671790934, guid: 5d1f39d52b947d942a1de50bac30c3ee, type: 3}
+  - go: {fileID: 6712312466530833251, guid: 5d1f39d52b947d942a1de50bac30c3ee, type: 3}
     index: 2
-  - go: {fileID: 405098645517702959, guid: 5d1f39d52b947d942a1de50bac30c3ee, type: 3}
+  - go: {fileID: -1723236067353783422, guid: 5d1f39d52b947d942a1de50bac30c3ee, type: 3}
     index: 3
   generateGOHierarchy: 0
+  textureAssetName: exclamation
+  prefabAssetName: exclamation_GO

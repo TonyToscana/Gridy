@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Char
+  - Path
+  - Door
+  - HealthBar
+  - grass
+  - bloodImage
   layers:
   - Default
   - TransparentFX

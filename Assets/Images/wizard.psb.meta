@@ -2711,24 +2711,26 @@ ScriptedImporter:
       bones: 06000000010000000200000008000000090000000500000000000000
     dimension: {x: 0, y: 0}
   boneGOs:
-  - go: {fileID: 2238115746508843549, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
+  - go: {fileID: -276555992975293848, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
     index: 0
-  - go: {fileID: -8848453297833246745, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
+  - go: {fileID: 8609074003436716626, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
     index: 1
-  - go: {fileID: -4972244221522394113, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
+  - go: {fileID: 7236460751511038586, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
     index: 2
-  - go: {fileID: -1478843069114741560, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
+  - go: {fileID: 549346022700982854, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
     index: 3
-  - go: {fileID: -2227153756180553819, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
+  - go: {fileID: 6072069418767687481, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
     index: 4
-  - go: {fileID: 8165966189999370258, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
+  - go: {fileID: 5597810119107258825, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
     index: 5
-  - go: {fileID: -1097584893547099713, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
+  - go: {fileID: -821878258844469601, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
     index: 6
-  - go: {fileID: -3381319182571842801, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
+  - go: {fileID: -3228830337053637984, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
     index: 7
-  - go: {fileID: 5409900839407580646, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
+  - go: {fileID: -2748683866790520257, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
     index: 8
-  - go: {fileID: -7073221922502653404, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
+  - go: {fileID: 448733453229993623, guid: 636f3e66141595c45a56afd4a1cb5272, type: 3}
     index: 9
   generateGOHierarchy: 0
+  textureAssetName: wizard
+  prefabAssetName: wizard_GO
