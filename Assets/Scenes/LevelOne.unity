@@ -1897,8 +1897,8 @@ MonoBehaviour:
     lastSpawn: 0
   - spawnPrefab: {fileID: 8974110659515851419, guid: 010722700148dba4b922ca74e5913bfe,
       type: 3}
-    spawnCooldown: -1
-    maxSpawns: 6
+    spawnCooldown: 6
+    maxSpawns: -1
     currentSpawns: 0
     lastSpawn: 0
   debug: 0
