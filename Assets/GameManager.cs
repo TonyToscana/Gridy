@@ -165,7 +165,9 @@ public class GameManager : MonoBehaviour, HealthListener
         {
             //SceneManager.LoadSceneAsync("LevelWon");
             this.gameEnded = true;
-            Debug.Log("END +++ " + SceneManager.GetActiveScene().name);
+
+            ShieldCommand.used = false;
+
             switch(SceneManager.GetActiveScene().name)
             {
                 case "LevelOne":
@@ -176,10 +178,13 @@ public class GameManager : MonoBehaviour, HealthListener
                     break;
                 case "LevelThree":
                     SceneManager.LoadSceneAsync("Level4");
-                    break; 
+                    break;
                 case "Level4":
+                    SceneManager.LoadSceneAsync("LevelFive");
+                    break;
+                case "LevelFive":
                     SceneManager.LoadSceneAsync("GameOver");
-                    break; 
+                    break;
             }
         }
     }

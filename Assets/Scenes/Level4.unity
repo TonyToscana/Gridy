@@ -2072,25 +2072,7 @@ MonoBehaviour:
       LayerZIndex: 0
       UseLayerZIndex: 0
   - map: {fileID: 2800000, guid: c250c25cbad094f489d23077e9bbb831, type: 3}
-    prefab:
-    - color: {r: 0, g: 1, b: 0, a: 1}
-      prefab: {fileID: 455108143354079326, guid: fe43730512d7c9941aa6587f0fded77f,
-        type: 3}
-      autoRotate: 0
-      LayerZIndex: -6
-      UseLayerZIndex: 1
-    - color: {r: 0, g: 0, b: 0, a: 1}
-      prefab: {fileID: 7437900331149956866, guid: 42568085347141e4f9ccf0aff9cb61de,
-        type: 3}
-      autoRotate: 0
-      LayerZIndex: 0
-      UseLayerZIndex: 0
-    - color: {r: 0, g: 1, b: 1, a: 1}
-      prefab: {fileID: 784264478551464122, guid: d7b9767115e2b9e45913dc47e70209fe,
-        type: 3}
-      autoRotate: 0
-      LayerZIndex: -2
-      UseLayerZIndex: 1
+    prefab: []
   - map: {fileID: 2800000, guid: 30cea1a6e757fe1419581b87e987636d, type: 3}
     prefab:
     - color: {r: 1, g: 0, b: 0, a: 1}
@@ -2245,12 +2227,6 @@ MonoBehaviour:
       UseLayerZIndex: 1
     - color: {r: 0, g: 0, b: 1, a: 1}
       prefab: {fileID: 1393573119217107026, guid: e527b8ab8bfe2e3448a9a347ae313656,
-        type: 3}
-      autoRotate: 0
-      LayerZIndex: -2
-      UseLayerZIndex: 1
-    - color: {r: 1, g: 1, b: 1, a: 1}
-      prefab: {fileID: 5593203707664477005, guid: 6c09c9e3bff5f774b850d4d8c60800b1,
         type: 3}
       autoRotate: 0
       LayerZIndex: -2
@@ -2462,6 +2438,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5150056283678784494, guid: ac5e8d67074572a48be943a4c4a0bae5,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1174833425}
     - target: {fileID: 500399180495127735, guid: ac5e8d67074572a48be943a4c4a0bae5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2567,11 +2548,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5150056283678784494, guid: ac5e8d67074572a48be943a4c4a0bae5,
-        type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 1174833425}
     - target: {fileID: 8017320079964931168, guid: ac5e8d67074572a48be943a4c4a0bae5,
         type: 3}
       propertyPath: m_IsActive

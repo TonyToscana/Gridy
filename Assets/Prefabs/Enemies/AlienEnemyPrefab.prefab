@@ -135,7 +135,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   stats:
     health: 100
-  damage: 10
+  damage: 100
 --- !u!114 &-6982578819961770011
 MonoBehaviour:
   m_ObjectHideFlags: 0

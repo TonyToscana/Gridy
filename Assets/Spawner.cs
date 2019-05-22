@@ -9,7 +9,10 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach (var obj in SpawnObj)
+        {
+            obj.lastSpawn = Time.time + obj.spawnCooldown;
+        }
     }
 
     public bool debug = false;
@@ -40,7 +43,7 @@ public class Spawner : MonoBehaviour
             if ((obj.maxSpawns > obj.currentSpawns || obj.maxSpawns == -1) && Time.time > obj.lastSpawn)
             {
                 spawnObject(obj.spawnPrefab);
-
+                Debug.Log("--->>> " + obj.currentSpawns + " = " + obj.spawnPrefab.name);
                 obj.currentSpawns++;
                 obj.lastSpawn = Time.time + obj.spawnCooldown;
             }
@@ -62,7 +65,10 @@ public class Spawner : MonoBehaviour
             }
         }
 
-        Instantiate(obj, possibleLocations[Random.Range(0, possibleLocations.Count)].gameObject.transform.position, Quaternion.identity);
+        Vector3 dir = possibleLocations[Random.Range(0, possibleLocations.Count)].gameObject.transform.position;
+        dir.z = -6;
+
+        Instantiate(obj, dir, Quaternion.identity);
     }
 
     private void OnDrawGizmos()

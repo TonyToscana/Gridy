@@ -371,6 +371,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5150056283678784494, guid: ac5e8d67074572a48be943a4c4a0bae5,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 447108074}
     - target: {fileID: 500399180495127735, guid: ac5e8d67074572a48be943a4c4a0bae5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -476,11 +481,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5150056283678784494, guid: ac5e8d67074572a48be943a4c4a0bae5,
-        type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 447108074}
     - target: {fileID: 8017320079964931168, guid: ac5e8d67074572a48be943a4c4a0bae5,
         type: 3}
       propertyPath: m_IsActive
@@ -1996,6 +1996,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 1226499725}
+  alienSpeed: 1.5
+  alienDistance: 10
 --- !u!4 &1591900547
 Transform:
   m_ObjectHideFlags: 0
@@ -2209,32 +2211,14 @@ MonoBehaviour:
   SpawnObj:
   - spawnPrefab: {fileID: 6211545311823852811, guid: bcec51d19c14b464bb83ce295ab5d94f,
       type: 3}
-    spawnCooldown: 1
+    spawnCooldown: 3
     maxSpawns: 1
     currentSpawns: 0
     lastSpawn: 0
   - spawnPrefab: {fileID: 4576925343160884012, guid: 6c09c9e3bff5f774b850d4d8c60800b1,
       type: 3}
-    spawnCooldown: 1
+    spawnCooldown: 3
     maxSpawns: 1
-    currentSpawns: 0
-    lastSpawn: 0
-  - spawnPrefab: {fileID: 6211545311823852811, guid: bcec51d19c14b464bb83ce295ab5d94f,
-      type: 3}
-    spawnCooldown: 1
-    maxSpawns: 1
-    currentSpawns: 0
-    lastSpawn: 0
-  - spawnPrefab: {fileID: 4576925343160884012, guid: 6c09c9e3bff5f774b850d4d8c60800b1,
-      type: 3}
-    spawnCooldown: 1
-    maxSpawns: 1
-    currentSpawns: 0
-    lastSpawn: 0
-  - spawnPrefab: {fileID: 8974110659515851419, guid: 010722700148dba4b922ca74e5913bfe,
-      type: 3}
-    spawnCooldown: 8
-    maxSpawns: 2
     currentSpawns: 0
     lastSpawn: 0
   debug: 0
