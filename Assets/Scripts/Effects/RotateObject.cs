@@ -16,11 +16,11 @@ public class RotateObject : MonoBehaviour
     {
         if (RotateClockwise)
         {
-            transform.Rotate(Vector3.back * RotationSpeed);
+            transform.Rotate(Vector3.back * RotationSpeed * Time.deltaTime * 100);
         }
         else
         {
-            transform.Rotate(Vector3.forward * RotationSpeed);
+            transform.Rotate(Vector3.forward * RotationSpeed * Time.deltaTime * 100);
         }
     }
 }

@@ -161,7 +161,7 @@ MonoBehaviour:
   - name: MainTheme
     audioMixerGroup: {fileID: 24300002, guid: 81ad0f75442706b46badd67b9f15bfc9, type: 2}
     clip: {fileID: 8300000, guid: 6ba93c78cf1880a4db405480ff73a940, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     loop: 1
     isPaused: 0
@@ -2066,6 +2066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 179097868}
+  alienSpeed: 1.5
+  alienDistance: 10
 --- !u!4 &1257516438
 Transform:
   m_ObjectHideFlags: 0
@@ -2522,6 +2524,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5150056283678784494, guid: ac5e8d67074572a48be943a4c4a0bae5,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1933626656}
     - target: {fileID: 500399180495127735, guid: ac5e8d67074572a48be943a4c4a0bae5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2627,11 +2634,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5150056283678784494, guid: ac5e8d67074572a48be943a4c4a0bae5,
-        type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 1933626656}
     - target: {fileID: 8017320079964931168, guid: ac5e8d67074572a48be943a4c4a0bae5,
         type: 3}
       propertyPath: m_IsActive
