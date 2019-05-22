@@ -2463,7 +2463,7 @@ MonoBehaviour:
     file_cachedStartup: {fileID: 4900000, guid: db4bdd2c18d621e4c859c8d3275e0f16,
       type: 3}
     data_cachedStartup: 
-    cacheStartup: 1
+    cacheStartup: 0
   showNavGraphs: 1
   showUnwalkableNodes: 1
   debugMode: 0
