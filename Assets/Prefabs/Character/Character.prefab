@@ -105,6 +105,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   LastDirectionKey: 0
   PrevDirectionKey: 0
+  isFacingLeft: 0
 --- !u!114 &7884336195516621671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +222,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cb88320e7db8a064c96666824af6c820, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 693d7f6342dfc6140872732a7cfaa3e4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -324,6 +325,7 @@ MonoBehaviour:
     type: 3}
   CooldownTime: 2
   damage: 20
+  used: 0
 --- !u!1 &8698816945481583364
 GameObject:
   m_ObjectHideFlags: 0

@@ -1752,7 +1752,7 @@ MonoBehaviour:
   - map: {fileID: 2800000, guid: c250c25cbad094f489d23077e9bbb831, type: 3}
     prefab:
     - color: {r: 0, g: 1, b: 0, a: 1}
-      prefab: {fileID: 4831872150217245275, guid: fe43730512d7c9941aa6587f0fded77f,
+      prefab: {fileID: 455108143354079326, guid: fe43730512d7c9941aa6587f0fded77f,
         type: 3}
       autoRotate: 0
       LayerZIndex: -6
@@ -1813,12 +1813,6 @@ MonoBehaviour:
       autoRotate: 0
       LayerZIndex: 0
       UseLayerZIndex: 0
-    - color: {r: 0, g: 1, b: 0, a: 1}
-      prefab: {fileID: 5003997141575069526, guid: 3a7410a9fdb2cc74ba59e3437b1e3471,
-        type: 3}
-      autoRotate: 0
-      LayerZIndex: 0
-      UseLayerZIndex: 1
     - color: {r: 0, g: 0.1254902, b: 0, a: 1}
       prefab: {fileID: 1167133688987776528, guid: e858f2ab8304c874cbf6edb64373c521,
         type: 3}
@@ -1833,6 +1827,12 @@ MonoBehaviour:
       UseLayerZIndex: 1
     - color: {r: 0.34509805, g: 0, b: 0.78431374, a: 1}
       prefab: {fileID: 5823258899301800663, guid: ddc5497beba60554ab98483de46da6ac,
+        type: 3}
+      autoRotate: 0
+      LayerZIndex: 0
+      UseLayerZIndex: 1
+    - color: {r: 0.2509804, g: 0, b: 0, a: 1}
+      prefab: {fileID: 1755208813778477102, guid: 5fec687679d9924438e1b93c580adedc,
         type: 3}
       autoRotate: 0
       LayerZIndex: 0
@@ -1933,6 +1933,7 @@ MonoBehaviour:
       autoRotate: 0
       LayerZIndex: -2
       UseLayerZIndex: 1
+  Finish: 0
 --- !u!4 &1368464933
 Transform:
   m_ObjectHideFlags: 0
