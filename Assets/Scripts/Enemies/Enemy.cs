@@ -21,9 +21,11 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-
-        //lastDamage += Time.deltaTime;
-        coroutine = damageCycle();
+        if (lastDamage >= 2)
+        {
+            lastDamage = 0;
+        }
+        lastDamage += Time.deltaTime;
     }
 
     public void Damage(int damage)
@@ -33,47 +35,12 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player" && canDoDamage)
+        if (collision.gameObject.tag == "Player" && lastDamage >= 2f)
         {
-            Debug.LogWarning("Damage dealt by alien on enter");
-            //collision.gameObject.GetComponent<Health>().Damage(damage);
-            StartCoroutine(coroutine);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        
-        if (collision.gameObject.tag == "Player")
-        {
-            Debug.LogWarning("TriggerExit2D");
-            //StartCoroutine(damageCycle(collision));
+            lastDamage = 0;
             collision.gameObject.GetComponent<Health>().Damage(damage);
-            StopCoroutine(coroutine);
         }
     }
-
-    IEnumerator damageCycle()
-    {
-        while(true)
-        {
-            Debug.Log("damageCycle!");
-            yield return new WaitForSeconds(2);
-        }
-        //canDoDamage = false;
-        //yield return new WaitForSeconds(2);
-        //canDoDamage = true;
-    }
-
-    /*private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && canDoDamage)
-        {
-            Debug.LogWarning("Damage dealt by alien on stay");
-            collision.gameObject.GetComponent<Health>().Damage(damage);
-            StartCoroutine(damageCycle());
-        }
-    }*/
 }

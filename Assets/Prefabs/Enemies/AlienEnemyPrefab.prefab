@@ -135,7 +135,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   stats:
     health: 100
-  damage: 1
+  damage: 10
 --- !u!114 &-6982578819961770011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc201424eca6214418f35c4f1c670c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 10
+  distance: 16
 --- !u!114 &3751519201294460719
 MonoBehaviour:
   m_ObjectHideFlags: 0
