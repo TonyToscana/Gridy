@@ -170,16 +170,16 @@ public class GameManager : MonoBehaviour, HealthListener
             {
                 case "LevelOne":
                     SceneManager.LoadSceneAsync("Level2");
-                    //SceneManager.LoadSceneAsync("GameOver");
-                    Debug.Log("ENDsda " + SceneManager.GetActiveScene().name);
-
                     break;
                 case "Level2":
                     SceneManager.LoadSceneAsync("LevelThree");
-
-                    Debug.Log("ENDsda " + SceneManager.GetActiveScene().name);
-
                     break;
+                case "LevelThree":
+                    SceneManager.LoadSceneAsync("Level4");
+                    break; 
+                case "Level4":
+                    SceneManager.LoadSceneAsync("GameOver");
+                    break; 
             }
         }
     }

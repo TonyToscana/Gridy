@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missile: {fileID: 4688605110014911816, guid: 0c2bfb373ad477d45bedb442f47813a6, type: 3}
+  maxMissileNumber: 8
+  mixMissileNumber: 1
 --- !u!1 &8974110659821671755
 GameObject:
   m_ObjectHideFlags: 0
