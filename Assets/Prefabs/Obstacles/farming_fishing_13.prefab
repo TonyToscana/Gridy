@@ -4854,7 +4854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8354354374268239877}
   - component: {fileID: 6511540028083805635}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: farming_fishing_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}

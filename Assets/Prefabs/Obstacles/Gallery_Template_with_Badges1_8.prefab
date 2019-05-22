@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 197594525694204803}
   - component: {fileID: 3575609802141890527}
   - component: {fileID: 922716756110854893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gallery_Template_with_Badges1_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3508525997604257306}
   - component: {fileID: -5499950206684420290}
   - component: {fileID: -4363891713909838348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: fence_16
   m_TagString: Door
   m_Icon: {fileID: 0}
