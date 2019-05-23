@@ -32,6 +32,7 @@ public class GameOver : MonoBehaviour
         Debug.Log("GameRestart");
         ShieldCommand.setShieldNotUsed();       
         Points.GetInstance().Set(0);
+        GameTime.GetInstance().Set(0);
         SceneManager.LoadSceneAsync(PlayerPrefs.GetString("cameFromScene"));
         //SceneManager.LoadScene(scene)
     }

@@ -5,22 +5,22 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    private float timeInSeconds;
+    private GameTime timeInSeconds;
     // Start is called before the first frame update
     void Start()
     {
-        timeInSeconds = 0f;
+        timeInSeconds = GameTime.GetInstance();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeInSeconds += Time.deltaTime;
+        timeInSeconds.Add(Time.deltaTime);
     }
 
     public string formatTime()
     {
-        return formatTime(this.timeInSeconds);
+        return formatTime(timeInSeconds.Seconds);
     }
 
     public static string formatTime(float timeInSeconds)
@@ -49,6 +49,6 @@ public class Timer : MonoBehaviour
 
     public float GetTime()
     {
-        return this.timeInSeconds;
+        return timeInSeconds.Seconds;
     }
 }
