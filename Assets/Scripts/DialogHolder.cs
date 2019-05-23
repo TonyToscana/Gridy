@@ -45,7 +45,9 @@ public class DialogHolder : MonoBehaviour
             manager.AddMessage("Hello. I see you are new in the craft..")
                    .AddMessage("This is a dangerous world. I will give you a shild to protext your self for 5 seconds..")
                    .AddMessage("Press [Q] to get the shild..")
+                   .AddMessage("Press [F] to shoot energy sphere to kill guardians..")
                    .AddMessage("For every 100 calories that you consume the damage you receive is reduce by 10%..")
+                   .AddMessage("Consume all fruits and vegetables to go to the next level..")
                    .OnReaded(MessageReaded)
                    .ShowBox();
         }
