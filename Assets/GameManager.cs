@@ -183,7 +183,7 @@ public class GameManager : MonoBehaviour, HealthListener
                     SceneManager.LoadSceneAsync("LevelFive");
                     break;
                 case "LevelFive":
-                    SceneManager.LoadSceneAsync("GameOver");
+                    SceneManager.LoadSceneAsync("LevelSucceded");
                     break;
             }
         }

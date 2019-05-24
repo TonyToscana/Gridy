@@ -633,11 +633,11 @@ RectTransform:
   m_Father: {fileID: 3192441713575244896}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 203}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -15}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3192441712365348349
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1214,6 +1214,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3192441713575244896}
     m_Modifications:
+    - target: {fileID: 2080196459811194390, guid: 00b3fd29edc988640ae9590540ad28dc,
+        type: 3}
+      propertyPath: m_Name
+      value: ReturnButton
+      objectReference: {fileID: 0}
     - target: {fileID: 4288578536676350113, guid: 00b3fd29edc988640ae9590540ad28dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1277,7 +1282,7 @@ PrefabInstance:
     - target: {fileID: 4288578536676350113, guid: 00b3fd29edc988640ae9590540ad28dc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -188
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4288578536676350113, guid: 00b3fd29edc988640ae9590540ad28dc,
         type: 3}
@@ -1297,7 +1302,7 @@ PrefabInstance:
     - target: {fileID: 4288578536676350113, guid: 00b3fd29edc988640ae9590540ad28dc,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4288578536676350113, guid: 00b3fd29edc988640ae9590540ad28dc,
         type: 3}
@@ -1307,7 +1312,7 @@ PrefabInstance:
     - target: {fileID: 4288578536676350113, guid: 00b3fd29edc988640ae9590540ad28dc,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4288578536676350113, guid: 00b3fd29edc988640ae9590540ad28dc,
         type: 3}
@@ -1317,12 +1322,7 @@ PrefabInstance:
     - target: {fileID: 4288578536676350113, guid: 00b3fd29edc988640ae9590540ad28dc,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2080196459811194390, guid: 00b3fd29edc988640ae9590540ad28dc,
-        type: 3}
-      propertyPath: m_Name
-      value: ReturnButton
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5036768241211534345, guid: 00b3fd29edc988640ae9590540ad28dc,
         type: 3}
