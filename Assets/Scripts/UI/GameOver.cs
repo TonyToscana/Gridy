@@ -39,7 +39,6 @@ public class GameOver : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
         Application.Quit();
     }
 }

@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     private IEnumerator coroutine;
     public GameManager gameManager;
+    private bool inside = false;
 
     private bool canDoDamage = true;
     [System.Serializable]
@@ -33,6 +34,23 @@ public class Enemy : MonoBehaviour
         stats.health -= damage;
         if (stats.health <= 0)
             Destroy(this.gameObject);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && inside == false)
+        {
+            inside = true;
+            lastDamage = 0;
+            collision.gameObject.GetComponent<Health>().Damage(damage);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        inside = false;
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
