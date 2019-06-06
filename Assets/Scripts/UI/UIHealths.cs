@@ -60,11 +60,11 @@ public class UIHealths : MonoBehaviour, HealthListener
         }
     }
 
-    public void OnDeath(int CurrentHealth, Health health)
+    public void OnDeath(int CurrentHealth)
     {
     }
 
-    public void OnHeal(int CurrentHealth, Health health)
+    public void OnHeal(int CurrentHealth)
     {
         if(HeartInstances.Count < 3)
         {
@@ -75,7 +75,7 @@ public class UIHealths : MonoBehaviour, HealthListener
         
     }
 
-    public void OnDamage(int CurrentHealth, Health health)
+    public void OnDamage(int CurrentHealth)
     {
         
     }
@@ -86,7 +86,7 @@ public class UIHealths : MonoBehaviour, HealthListener
         Debug.Log("OnDisble executed:");
     }
 
-    public void OnNewLife(int CurrentLifes, Health health)
+    public void OnNewLife(int CurrentLifes)
     {
         if (HeartInstances.Count < 3)
         {
@@ -96,7 +96,7 @@ public class UIHealths : MonoBehaviour, HealthListener
         }
     }
 
-    public void OnLifeConsumed(int CurrentHealth, int CurrentLife, Health health)
+    public void OnLifeConsumed(int CurrentHealth, int CurrentLife)
     {
         if (HeartInstances.Count > 0)
         {

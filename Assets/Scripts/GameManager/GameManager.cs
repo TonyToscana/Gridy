@@ -26,13 +26,13 @@ public class GameManager : MonoBehaviour, HealthListener
     
     private bool playerIsDead = false;
 
-    public void OnDamage(int CurrentHealth, Health health)
+    public void OnDamage(int CurrentHealth)
     {
         damageTaken = true;
         GetComponent<AudioSource>().PlayOneShot(damageAudio);
     }
 
-    public void OnDeath(int CurrentHealth, Health health)
+    public void OnDeath(int CurrentHealth)
     {
         if(!playerIsDead)
         {
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour, HealthListener
         //Time.timeScale = 0;
     }
 
-    public void OnHeal(int CurrentHealth, Health health)
+    public void OnHeal(int CurrentHealth)
     {
         healTaken = true;
     }
@@ -204,11 +204,11 @@ public class GameManager : MonoBehaviour, HealthListener
         //code to go to main menu
     }
 
-    public void OnLifeConsumed(int CurrentHealth, int CurrentLife, Health health)
+    public void OnLifeConsumed(int CurrentHealth, int CurrentLife)
     {
     }
 
-    public void OnNewLife(int CurrentLifes, Health health)
+    public void OnNewLife(int CurrentLifes)
     {
     }
 }

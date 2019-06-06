@@ -58,20 +58,20 @@ public class UIHealth : MonoBehaviour, HealthListener
         }
     }
 
-    public void OnDeath(int CurrentHealth, Health health)
+    public void OnDeath(int CurrentHealth)
     {
     }
 
-    public void OnHeal(int CurrentHealth, Health health)
+    public void OnHeal(int CurrentHealth)
     {
 
     }
 
-    public void OnDamage(int CurrentHealth, Health health)
+    public void OnDamage(int CurrentHealth)
     {
     }
 
-    public void OnLifeConsumed(int CurrentHealth, int CurrentLife, Health health)
+    public void OnLifeConsumed(int CurrentHealth, int CurrentLife)
     {
         if (HeartInstances.Count > 0)
         {
@@ -80,8 +80,7 @@ public class UIHealth : MonoBehaviour, HealthListener
         }
     }
 
-    public void OnNewLife(int CurrentLifes, Health health)
+    public void OnNewLife(int CurrentLifes)
     {
-        throw new System.NotImplementedException();
     }
 }

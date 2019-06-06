@@ -12,9 +12,7 @@ public class ShieldCommand : MonoBehaviour, ICommand
     private void Start()
     {
         used = false;
-
     }
-
 
     public void Execute(GameObject obj)
     {
@@ -36,11 +34,13 @@ public class ShieldCommand : MonoBehaviour, ICommand
             shield.transform.parent = player.transform;
 
             used = true;
-            
-           
-          
 
+            Health health = FindObjectOfType<Health>();
 
+            if (health != null)
+            {
+                health.ChangeState(health.Invulnerable);
+            }
         }
     }
 

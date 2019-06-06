@@ -27,7 +27,15 @@ public class Power : MonoBehaviour
             if (soundDisappear!= null)
             {
                 AudioSource.PlayClipAtPoint(soundDisappear, transform.position);
-            }            
+            }
+
+            Health health = FindObjectOfType<Health>();
+
+            if (health != null)
+            {
+                health.ChangeState(health.Vulnerable);
+            }
+
             Destroy(prefab);
         }
     }
