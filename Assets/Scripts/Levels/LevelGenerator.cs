@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public static class ColorTypeConverter
@@ -30,12 +31,13 @@ public class LevelGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Array.Reverse(maps);
         RenderLevel();
         Finish = true;
     }
 
     private void RenderLevel()
-    {
+    {       
         foreach (var map in maps)
         {
             for (int x = 0; x < map.map.width; x++)

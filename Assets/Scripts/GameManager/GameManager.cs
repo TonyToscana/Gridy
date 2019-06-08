@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour, HealthListener
+public class GameManager : MonoBehaviour, HealthListener, IObserver
 {
     public PauseMenu pauseMenu;
     [SerializeField] public Image bloodDamagePattern;
@@ -15,15 +15,16 @@ public class GameManager : MonoBehaviour, HealthListener
 
     private GameManager manager;
     private GameObject CharacterObject;
+    private Consumable[] consumablesGame;
     private Health Health;
-    private int consumables;
+    private int numberConsumablesGame;
     private bool gameEnded = false;
     private float healingDone = 0;
     private bool damageTaken = false;
     private bool healTaken = false;
 
     private bool HealthListenerSet = false;
-    
+
     private bool playerIsDead = false;
 
     public void OnDamage(int CurrentHealth)
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour, HealthListener
 
     public void OnDeath(int CurrentHealth)
     {
-        if(!playerIsDead)
+        if (!playerIsDead)
         {
             playerIsDead = true;
             //change where to get time from
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour, HealthListener
             }
             catch (Exception e)
             {
-                
+
             }
 
             object loadData = SaveSystem.Load();
@@ -84,7 +85,7 @@ public class GameManager : MonoBehaviour, HealthListener
             }
 
             SceneManager.LoadSceneAsync("GameOver");
-        } 
+        }
     }
 
     private IEnumerator ShowCanvas(Canvas canvas)
@@ -111,12 +112,41 @@ public class GameManager : MonoBehaviour, HealthListener
     {
         this.gameEnded = false;
         this.manager = FindObjectOfType<GameManager>();
+        FindAndInitializaConsumables();       
+        CheckConsumablesAreCreated();
     }
+
+    private void FindAndInitializaConsumables()
+    {
+        this.consumablesGame = FindObjectsOfType<Consumable>();
+        this.numberConsumablesGame = consumablesGame.Length;
+    }
+
+    private void CheckConsumablesAreCreated()
+    {
+        if (numberConsumablesGame == 0)
+        {
+            StartCoroutine("waitToAttachObserverToConsumables");
+        }
+        else
+        {
+            AttachObserverToConsumables();
+        }
+    }
+
+
+    IEnumerator waitToAttachObserverToConsumables()
+    {            
+        yield return new WaitForSeconds(1);
+        FindAndInitializaConsumables();
+        AttachObserverToConsumables();
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        this.consumables = FindObjectsOfType<Consumable>().Length;
+        
 
         if (damageTaken)
         {
@@ -161,37 +191,7 @@ public class GameManager : MonoBehaviour, HealthListener
             healingDone++;
         }
 
-        if (consumables == 0 && !gameEnded)
-        {
-            //SceneManager.LoadSceneAsync("LevelWon");
-            this.gameEnded = true;
 
-            ShieldCommand.used = false;
-
-            switch(SceneManager.GetActiveScene().name)
-            {
-                case "LevelOne":
-                    SceneManager.LoadSceneAsync("Level2");
-                    break;
-                case "Level2":
-                    SceneManager.LoadSceneAsync("LevelThree");
-                    break;
-                case "LevelThree":
-                    SceneManager.LoadSceneAsync("Level4");
-                    break;
-                case "Level4":
-                    SceneManager.LoadSceneAsync("LevelFive");
-                    break;
-                case "LevelFive":
-                    SceneManager.LoadSceneAsync("LevelSucceded");
-                    break;
-            }
-        }
-    }
-
-    public void removeConsumable()
-    {
-        //this.consumables--;
     }
 
     public void OpenOptionsMenu()
@@ -210,5 +210,47 @@ public class GameManager : MonoBehaviour, HealthListener
 
     public void OnNewLife(int CurrentLifes)
     {
+    }
+
+    public void Update(ISubject subject)
+    {
+        this.numberConsumablesGame--;        
+        if (numberConsumablesGame == 0 && !gameEnded)
+        {
+            this.gameEnded = true;
+            ShieldCommand.used = false;
+            NextLevel();
+        }
+    }
+
+    private void NextLevel()
+    {
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "LevelOne":
+                SceneManager.LoadSceneAsync("Level2");
+                break;
+            case "Level2":
+                SceneManager.LoadSceneAsync("LevelThree");
+                break;
+            case "LevelThree":
+                SceneManager.LoadSceneAsync("Level4");
+                break;
+            case "Level4":
+                SceneManager.LoadSceneAsync("LevelFive");
+                break;
+            case "LevelFive":
+                SceneManager.LoadSceneAsync("LevelSucceded");
+                break;
+        }
+    }
+
+
+    private void AttachObserverToConsumables()
+    {        
+        foreach (var consumable in consumablesGame)
+        {
+            consumable.Attach(this.manager);
+        }
     }
 }

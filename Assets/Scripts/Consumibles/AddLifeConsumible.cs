@@ -46,8 +46,7 @@ public class AddLifeConsumible : MonoBehaviour
 
             health.AddLife(1);
 
-            FindObjectOfType<AudioManager>().Play("CoinPicked");
-            FindObjectOfType<GameManager>().removeConsumable();
+            FindObjectOfType<AudioManager>().Play("CoinPicked");           
             Destroy(this.gameObject);
         }
     }

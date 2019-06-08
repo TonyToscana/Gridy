@@ -46,8 +46,7 @@ public class IncreasePlayerHealth : MonoBehaviour
 
             health.SetCurrentHealth(100);
 
-            FindObjectOfType<AudioManager>().Play("CoinPicked");
-            FindObjectOfType<GameManager>().removeConsumable();
+            FindObjectOfType<AudioManager>().Play("CoinPicked");           
             Destroy(this.gameObject);
         }
     }
