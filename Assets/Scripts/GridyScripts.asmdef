@@ -1,14 +1,11 @@
 {
-    "name": "Tests",
+    "name": "GridyScripts",
     "references": [
-        "GUID:44005185ddac7d948b0f2682bbe1c04e"
+        "GUID:efa45043feb7e4147a305b73b5cea642",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
-    "optionalUnityReferences": [
-        "TestAssemblies"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
