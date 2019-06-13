@@ -9,13 +9,8 @@ public class Enemy : MonoBehaviour
     private bool inside = false;
 
     private bool canDoDamage = true;
-    [System.Serializable]
-    public class EnemyStats
-    {
-        public int health = 100;
-    }
 
-    public EnemyStats stats = new EnemyStats();
+    private EnemyLogic stats = new EnemyLogic();
 
     private float lastDamage = 0;
     public int damage = 1;
@@ -31,9 +26,14 @@ public class Enemy : MonoBehaviour
 
     public void Damage(int damage)
     {
-        stats.health -= damage;
-        if (stats.health <= 0)
+        stats.Damage(damage);
+        if (stats.GetHealth() <= 0)
             Destroy(this.gameObject);
+    }
+
+    public int GetHealth()
+    {
+        return stats.GetHealth();
     }
 
 
@@ -60,5 +60,27 @@ public class Enemy : MonoBehaviour
             lastDamage = 0;
             collision.gameObject.GetComponent<Health>().Damage(damage);
         }
+    }
+}
+
+[System.Serializable]
+public class EnemyLogic
+{
+    [System.Serializable]
+    public class EnemyStats
+    {
+        public int health = 100;
+    }
+
+    public EnemyStats stats = new EnemyStats();
+
+    public int GetHealth()
+    {
+        return this.stats.health;
+    }
+
+    public void Damage(int damage)
+    {
+        stats.health -= damage;
     }
 }
