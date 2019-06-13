@@ -56,7 +56,7 @@ public class PauseMenu : MonoBehaviour
     private void ExitGame()
     {
         Debug.Log("Closed Game!");
-        Application.Quit();
+        System.Diagnostics.Process.GetCurrentProcess().Kill();
     }
 
     private void OpenOptions()
