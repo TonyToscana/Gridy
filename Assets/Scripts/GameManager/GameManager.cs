@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour, HealthListener, IObserver
     private GameObject CharacterObject;
     private Consumable[] consumablesGame;
     private Health Health;
+    public ScoreData score;
     private int numberConsumablesGame;
     private bool gameEnded = false;
     private float healingDone = 0;
@@ -37,54 +38,76 @@ public class GameManager : MonoBehaviour, HealthListener, IObserver
     {
         if (!playerIsDead)
         {
-            playerIsDead = true;
-            //change where to get time from
-            PlayerPrefs.SetString("elapsedTimeInLevel", FindObjectOfType<LevelManager>().GetTime());
-            PlayerPrefs.SetInt("lastScore", Points.GetInstance().Number);
-            PlayerPrefs.SetString("cameFromScene", SceneManager.GetActiveScene().name);
+            SetPlayerIsDead();
+            SetPlayerPrefs();
             FindObjectOfType<AudioManager>().Stop("MainTheme");
-            //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
 
-            ScoreData score = new ScoreData
-            {
-                points = Points.GetInstance().Number,
-                time = FindObjectOfType<LevelManager>().GetTime(),
-                name = PlayerPrefs.GetString("username")
-            };
-
-            try
-            {
-                IData webData = new WebData(new Data());
-
-                webData.Save("name", JsonUtility.ToJson(score, true));
-            }
-            catch (Exception e)
-            {
-
-            }
-
-            object loadData = SaveSystem.Load();
-
-            if (loadData == null)
-            {
-                SaveSystem.Save(new List<ScoreData>() { score });
-            }
-            else
-            {
-                List<ScoreData> scoreDataList = loadData as List<ScoreData>;
-
-                if (scoreDataList == null)
-                {
-                    scoreDataList = new List<ScoreData>();
-                }
-
-                scoreDataList.Add(score);
-                scoreDataList = scoreDataList.OrderBy(x => x.points).Reverse().Take(10).ToList();
-
-                SaveSystem.Save(scoreDataList);
-            }
+            CreateNewScoreData();
+            SaveWebData();
+            SaveNewDataListDetail();
 
             SceneManager.LoadSceneAsync("GameOver");
+        }
+    }
+
+    private void SetPlayerPrefs()
+    {
+
+        PlayerPrefs.SetString("elapsedTimeInLevel", FindObjectOfType<LevelManager>().GetTime());
+        PlayerPrefs.SetInt("lastScore", Points.GetInstance().Number);
+        PlayerPrefs.SetString("cameFromScene", SceneManager.GetActiveScene().name);
+    }
+
+    private void SetPlayerIsDead()
+    {
+
+        playerIsDead = true;
+    }
+
+    private void CreateNewScoreData()
+    {
+        score = new ScoreData
+        {
+            points = Points.GetInstance().Number,
+            time = FindObjectOfType<LevelManager>().GetTime(),
+            name = PlayerPrefs.GetString("username")
+        };
+    }
+    public void SaveWebData()
+    {
+        try
+        {
+            IData webData = new WebData(new Data());
+
+            webData.Save("name", JsonUtility.ToJson(score, true));
+        }
+        catch (Exception e)
+        {
+
+        }
+    }
+
+    public void SaveNewDataListDetail()
+    {
+        object loadData = SaveSystem.Load();
+
+        if (loadData == null)
+        {
+            SaveSystem.Save(new List<ScoreData>() { score });
+        }
+        else
+        {
+            List<ScoreData> scoreDataList = loadData as List<ScoreData>;
+
+            if (scoreDataList == null)
+            {
+                scoreDataList = new List<ScoreData>();
+            }
+
+            scoreDataList.Add(score);
+            scoreDataList = scoreDataList.OrderBy(x => x.points).Reverse().Take(10).ToList();
+
+            SaveSystem.Save(scoreDataList);
         }
     }
 
@@ -98,8 +121,6 @@ public class GameManager : MonoBehaviour, HealthListener, IObserver
 
             yield return new WaitForSeconds(0.009f);
         }
-
-        //Time.timeScale = 0;
     }
 
     public void OnHeal(int CurrentHealth)
@@ -112,7 +133,7 @@ public class GameManager : MonoBehaviour, HealthListener, IObserver
     {
         this.gameEnded = false;
         this.manager = FindObjectOfType<GameManager>();
-        FindAndInitializaConsumables();       
+        FindAndInitializaConsumables();
         CheckConsumablesAreCreated();
     }
 
@@ -134,9 +155,9 @@ public class GameManager : MonoBehaviour, HealthListener, IObserver
         }
     }
 
-
+    //necessary to solve delay of creating consumables
     IEnumerator waitToAttachObserverToConsumables()
-    {            
+    {
         yield return new WaitForSeconds(1);
         FindAndInitializaConsumables();
         AttachObserverToConsumables();
@@ -146,30 +167,18 @@ public class GameManager : MonoBehaviour, HealthListener, IObserver
     // Update is called once per frame
     void Update()
     {
-        
 
-        if (damageTaken)
-        {
-            bloodDamagePattern.color = new Color(255, 0, 0);
-        }
-        else
-        {
-            bloodDamagePattern.color = Color.Lerp(bloodDamagePattern.color, Color.clear, 1f * Time.deltaTime);
-        }
+        CheckDamageTaken();
+        CheckHealTaken();
 
-        if (healTaken)
-        {
-            healHalingPattern.color = new Color(0, 255, 0);
-        }
-        else
-        {
-            healHalingPattern.color = Color.Lerp(healHalingPattern.color, Color.clear, 1f * Time.deltaTime);
-        }
+        ResetFlags();
 
-        damageTaken = false;
-        healTaken = false;
+        InitializeHeal();
+        HealtPlayerIfHasPoints();
+    }
 
-
+    private void InitializeHeal()
+    {
         if (this.Health == null)
         {
             this.CharacterObject = GameObject.FindGameObjectWithTag("Player");
@@ -184,14 +193,68 @@ public class GameManager : MonoBehaviour, HealthListener, IObserver
             HealthListenerSet = true;
             Health.SetListener(this);
         }
+    }
 
+    private void CheckDamageTaken()
+    {
+        if (damageTaken)
+        {
+            DoActionDamageTaken();
+
+        }
+        else
+        {
+            DoActionDamageNotTaken();
+
+        }
+    }
+
+    private void DoActionDamageTaken()
+    {
+        bloodDamagePattern.color = new Color(255, 0, 0);
+    }
+
+    private void DoActionDamageNotTaken()
+    {
+        bloodDamagePattern.color = Color.Lerp(bloodDamagePattern.color, Color.clear, 1f * Time.deltaTime);
+    }
+
+    private void CheckHealTaken()
+    {
+        if (healTaken)
+        {
+            DoActionHealTaken();
+        }
+        else
+        {
+            DoActionHealNotTaken();
+        }
+    }
+
+    private void DoActionHealNotTaken()
+    {
+        healHalingPattern.color = Color.Lerp(healHalingPattern.color, Color.clear, 1f * Time.deltaTime);
+    }
+
+    private void DoActionHealTaken()
+    {
+        
+        healHalingPattern.color = new Color(0, 255, 0);
+    }
+
+    private void ResetFlags()
+    {
+        damageTaken = false;
+        healTaken = false;
+    }
+
+    private void HealtPlayerIfHasPoints()
+    {
         if (Points.GetInstance().Number >= (int)((healingDone * 100) + 100))
         {
             this.Health.Heal(30);
             healingDone++;
         }
-
-
     }
 
     public void OnLifeConsumed(int CurrentHealth, int CurrentLife)
@@ -204,7 +267,7 @@ public class GameManager : MonoBehaviour, HealthListener, IObserver
 
     public void Update(ISubject subject)
     {
-        this.numberConsumablesGame--;        
+        this.numberConsumablesGame--;
         if (numberConsumablesGame == 0 && !gameEnded)
         {
             this.gameEnded = true;
@@ -237,7 +300,7 @@ public class GameManager : MonoBehaviour, HealthListener, IObserver
 
 
     private void AttachObserverToConsumables()
-    {        
+    {
         foreach (var consumable in consumablesGame)
         {
             consumable.Attach(this.manager);
