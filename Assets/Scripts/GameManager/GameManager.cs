@@ -194,16 +194,6 @@ public class GameManager : MonoBehaviour, HealthListener, IObserver
 
     }
 
-    public void OpenOptionsMenu()
-    {
-        //code to open options menu
-    }
-
-    public void GotoMainMenu()
-    {
-        //code to go to main menu
-    }
-
     public void OnLifeConsumed(int CurrentHealth, int CurrentLife)
     {
     }
