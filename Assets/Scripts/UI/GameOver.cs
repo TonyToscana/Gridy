@@ -39,6 +39,6 @@ public class GameOver : MonoBehaviour
 
     public void ExitGame()
     {
-        Application.Quit();
+        System.Diagnostics.Process.GetCurrentProcess().Kill();
     }
 }
